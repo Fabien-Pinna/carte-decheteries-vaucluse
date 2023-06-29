@@ -1,0 +1,12 @@
+@import "./BoxContact/BoxContact.scss";
+@import "./BoxDescription/BoxDescription.scss";
+
+.box_informations {
+	.box_contact,
+	.box_description {
+		background-color: #f4f3f3;
+		border-radius: 5px;
+		box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
+		margin: 0rem 0.5rem 0.8rem 0.5rem;
+	}
+}

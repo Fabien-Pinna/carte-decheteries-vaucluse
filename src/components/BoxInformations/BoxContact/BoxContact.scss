@@ -1,0 +1,36 @@
+@import "./BoxAddress/BoxAddress.scss";
+@import "./BoxPhone/BoxPhone.scss";
+@import "./BoxWebsite/BoxWebsite.scss";
+
+.box_contact {
+	padding: 1rem 0 1rem 1rem;
+
+	.box_address,
+	.box_phone,
+	.box_website {
+		display: flex;
+		align-items: center;
+	}
+
+	.icon_marker,
+	.icon_phone,
+	.icon_website {
+		margin: 0.5rem;
+		height: 1.5rem;
+		width: 1.5rem;
+	}
+
+	.icon_phone_call,
+	.icon_new_window {
+		height: 15px;
+	}
+
+	a {
+		text-decoration: none;
+		font-weight: bold;
+
+		&:focus-visible {
+			outline: none;
+		}
+	}
+}

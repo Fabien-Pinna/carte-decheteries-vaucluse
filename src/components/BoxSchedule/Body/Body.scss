@@ -1,0 +1,15 @@
+.box_schedule table {
+	td {
+		background-color: #ffebcd;
+	}
+
+	.morning_hours {
+		border-bottom: none;
+	}
+
+	.morning_hours_summer,
+	.afternoon_hours_summer {
+		border-top: none;
+		color: #3186d6;
+	}
+}

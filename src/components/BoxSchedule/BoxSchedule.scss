@@ -1,0 +1,22 @@
+@import "./Header/Header.scss";
+@import "./Body/Body.scss";
+@import "./HoursInfos/HoursInfos.scss";
+
+.box_schedule {
+	margin: 0 0.5rem;
+
+	table {
+		border-collapse: collapse;
+		text-align: center;
+		border-radius: 5px;
+		box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
+
+		th,
+		td {
+			padding: 0 !important;
+			text-align: center;
+			border: 2px solid white;
+			width: 2rem;
+		}
+	}
+}

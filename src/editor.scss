@@ -1,0 +1,39 @@
+@import "./components/Popup.scss";
+
+.wp-block-create-block-carte-decheteries-vaucluse {
+	height: 60vh;
+	width: 80vw;
+	position: relative;
+	margin: 2rem auto;
+
+	@media screen and (min-width: 800px) {
+		width: 50vw;
+	}
+
+	.map-container {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+
+		.mapboxgl-canvas-container {
+			.mapboxgl-marker {
+				width: 1.5rem;
+				height: 1.5rem;
+				cursor: pointer;
+
+				&.marker-publicLandfill svg path {
+					fill: #006400;
+				}
+
+				&.marker-privateLandfill svg path {
+					fill: #1c62e2;
+				}
+
+				&.marker-secondhandAssociation svg path {
+					fill: #f7aa04;
+				}
+			}
+		}
+	}
+}

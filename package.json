@@ -1,0 +1,31 @@
+{
+	"name": "carte-decheteries-vaucluse",
+	"version": "0.1.0",
+	"description": "Une carte intéractive des déchèteries du Vaucluse.",
+	"author": "Webinf@b",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"build": "webpack",
+		"start": "webpack --watch"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^26.5.0",
+		"babel-loader": "^9.1.2",
+		"json-loader": "^0.5.7",
+		"sass-loader": "^13.3.2"
+	},
+	"dependencies": {
+		"@wordpress/dom-ready": "^3.35.0",
+		"cors": "^2.8.5",
+		"mapbox-gl": "^2.15.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"uuid": "^9.0.0"
+	}
+}

@@ -1,0 +1,289 @@
+{
+	"type": "FeatureCollection",
+	"features": [
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "secondhandAssociation",
+				"id": "201",
+				"color": "#f7aa04",
+				"name": "La Petite ressourcerie",
+				"address": "61 Cours Victor Hugo",
+				"city": "84600 VALREAS",
+				"phoneData": "tel:+33490374127",
+				"phoneData2": "",
+				"phoneClient": "04 90 37 41 27",
+				"phoneClient2": "",
+				"website": "https://www.facebook.com/LaPetiteRessourcerieValreas",
+				"email": "mailto:ressourcerie@coupdepouce84.fr",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": ["X", "9h-12h", "X", "9h-12h", "X", "X", "X"],
+				"hoursAfternoon": ["X", "13h30-17h", "X", "X", "X", "X", "X"],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"Tous les objets doivent être en bon état",
+					"Bibelots",
+					"Décoration",
+					"Livres pour enfant",
+					"Meubles",
+					"Objets du quotidien",
+					"vaisselle",
+					"Petits électroménagers (cafetière, fer à repasser, grille-pains, bouilloire, etc.)"
+				],
+				"forbiddenWaste": [
+					"Objets en mauvais état en général",
+					"Gros appareils électroménagers (Réfrigérateurs, machines à laver, etc.)",
+					"Objets de puériculture",
+					"Objets utilisant des produits inflammables (chauffage, fioul, etc.)",
+					"Textiles (vêtements, chaussures, etc.)"
+				]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [4.987837524135029, 44.384833622623994]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "secondhandAssociation",
+				"id": "202",
+				"color": "#f7aa04",
+				"name": "Ressourcerie l'E-trier",
+				"address": "Zone d'activité Notre Dame",
+				"city": "84430 MONDRAGON",
+				"phoneData": "tel:+33490400398",
+				"phoneData2": "",
+				"phoneClient": "04 90 40 03 98",
+				"phoneClient2": "",
+				"website": "",
+				"email": "mailto:ressourcerie@pae84.org",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": [
+					"X",
+					"9h-12h",
+					"9h-12h",
+					"9h-12h",
+					"9h-12h",
+					"9h-12h",
+					"X"
+				],
+				"hoursAfternoon": [
+					"X",
+					"13h30-16h",
+					"13h30-16h",
+					"13h30-16h",
+					"13h30-16h",
+					"13h30-16h",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"Bijoux",
+					"Electroménager",
+					"Livres",
+					"Jouets",
+					"Meubles",
+					"Objets de loisirs",
+					"Outils",
+					"Vaisselle",
+					"Vélos",
+					"Vêtements"
+				],
+				"forbiddenWaste": ["Objets dangereux ou en mauvais état"]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [4.712887818927549, 44.30958532570896]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "secondhandAssociation",
+				"id": "203",
+				"color": "#f7aa04",
+				"name": "La Musardière",
+				"address": "14 quai de Verdun",
+				"city": "84110 VAISON-LA-ROMAINE",
+				"phoneData": "tel:+33766890534",
+				"phoneData2": "",
+				"phoneClient": "07 66 89 05 34",
+				"phoneClient2": "",
+				"website": "",
+				"email": "mailto:ressourcerie@adec-pv.fr",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": ["X", "X", "X", "X", "X", "X", "X"],
+				"hoursAfternoon": [
+					"14h-16h",
+					"X",
+					"14h-16h",
+					"X",
+					"14h-16h",
+					"14h-16h",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": ["Jeux adultes / enfants", "Meubles", "Vêtements"],
+				"forbiddenWaste": [
+					"Objets dangereux",
+					"Electroménager ou en mauvais état"
+				]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [5.069028268307746, 44.239644832370516]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "secondhandAssociation",
+				"id": "204",
+				"color": "#f7aa04",
+				"name": "EMMAÜS",
+				"address": "748 chemin de la papeterie",
+				"city": "84350 COURTHEZON",
+				"phoneData": "tel:+33974562773",
+				"phoneData2": "",
+				"phoneClient": "09 74 56 27 73",
+				"phoneClient2": "",
+				"website": "https://www.emmaus84.com/",
+				"email": "",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": ["X", "8h-12h", "8h-12h", "8h-12h", "8h-12h", "X", "X"],
+				"hoursAfternoon": [
+					"X",
+					"13h30-17h",
+					"13h30-17h",
+					"13h30-17h",
+					"X",
+					"13h30-17h",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"CD / DVD",
+					"Casettes audios / vidéos",
+					"Electroménager",
+					"Equipements puériculture",
+					"Informatique",
+					"Jeux / jouets",
+					"Livres",
+					"Meubles",
+					"Objets de décoration",
+					"Vaisselle",
+					"Vêtements / chaussures / autres textiles"
+				],
+				"forbiddenWaste": [
+					"Objets dangereux",
+					"Appareils audiovisuels ou en mauvais état"
+				]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [4.886527268250878, 44.10829301707421]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "secondhandAssociation",
+				"id": "205",
+				"color": "#f7aa04",
+				"name": "Recyclerie les 3 Eco",
+				"address": "620 av Louis Boudin, Zone de la Grande Marine",
+				"city": "84800 L'ISLE-SUR-LA-SORGUE",
+				"phoneData": "tel:+33486343131",
+				"phoneData2": "",
+				"phoneClient": "04 86 34 31 31",
+				"phoneClient2": "",
+				"website": "https://larecyclerieles3eco.com/",
+				"email": "mailto:les3eco@gmail.com",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": ["X", "9h-12h", "X", "9h-12h", "X", "9h-12h", "X"],
+				"hoursAfternoon": ["X", "X", "X", "X", "X", "X", "X"],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"Tout les objets doivent être en bon état",
+					"Bureaux",
+					"Literie",
+					"Livres",
+					"Meubles",
+					"Objets du quotidien",
+					"Pour objets volumineux : prévenir à l'avance par téléphone"
+				],
+				"forbiddenWaste": [
+					"Objets en mauvais état en général",
+					"Anciennes télévisions",
+					"Appareils numériques anciens",
+					"Imprimantes"
+				]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [5.0322350259661945, 43.92436343163591]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "secondhandAssociation",
+				"id": "206",
+				"color": "#ff9900",
+				"name": "Recyclerie Apt-luberon",
+				"address": "Zone industrielle des Bourguignons, 479 avenue de Roumanille",
+				"city": "84400 APT",
+				"phoneData": "tel:+33683495590",
+				"phoneData2": "",
+				"phoneClient": "06 83 49 55 90",
+				"phoneClient2": "",
+				"website": "https://www.recyclerie-apt-luberon.blogspot.fr",
+				"email": "mailto:recyclerie.apt.luberon@gmail.com",
+				"description": "Pour plus d'informations, contactez la structure.\nCollecte à domicile sur rendez-vous. Service gratuit pour les objets de moins de 6m3. En cas de taille supérieure, création d'un devis spécifique.",
+				"hoursMorning": ["X", "X", "X", "X", "X", "X", "X"],
+				"hoursAfternoon": [
+					"14h-18h",
+					"14h-18h",
+					"X",
+					"14h-18h",
+					"14h-18h",
+					"X",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"Bibelots",
+					"Equipements ménagers",
+					"Meubles",
+					"Outils",
+					"Vêtements",
+					"(Dans la limite de capacité de stockage et de la réutilisabilité ou de la réparabilité des objets apportés)"
+				],
+				"forbiddenWaste": ["Déchets non cités"]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [5.37400857112083, 43.888488774059525]
+			}
+		}
+	]
+}

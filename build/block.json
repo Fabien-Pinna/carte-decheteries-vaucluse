@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "create-block/carte-decheteries-vaucluse",
+  "version": "0.1.0",
+  "title": "Carte des déchèteries du Vaucluse",
+  "category": "widgets",
+  "icon": "location-alt",
+  "description": "Une carte interactive des déchèteries du Vaucluse",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "lat": {
+      "type": "number",
+      "default": 44.03802321165396
+    },
+    "lng": {
+      "type": "number",
+      "default": 5.206306016613048
+    },
+    "zoom": {
+      "type": "number",
+      "default": 8
+    }
+  },
+  "textdomain": "carte-decheteries-vaucluse",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}
