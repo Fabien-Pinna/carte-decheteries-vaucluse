@@ -707,7 +707,7 @@ function initializeMap(mapContainer, lat, lng, zoom, accessToken) {
 
   // Add fullscreen control
   const fullscreenControl = new (mapbox_gl__WEBPACK_IMPORTED_MODULE_3___default().FullscreenControl)();
-  map.addControl(fullscreenControl, "bottom-right");
+  map.addControl(fullscreenControl, 'bottom-right');
 
   // Add geolocate control
   const geolocateControl = new (mapbox_gl__WEBPACK_IMPORTED_MODULE_3___default().GeolocateControl)({
@@ -717,28 +717,41 @@ function initializeMap(mapContainer, lat, lng, zoom, accessToken) {
     trackUserLocation: true
   });
   map.addControl(geolocateControl);
-  map.on('load', function () {
-    const geojsonFiles = ['privateLandfill', 'publicLandfill', 'secondhandAssociation'];
+  let isStyleLoaded = false;
+  map.on('style.load', function () {
+    isStyleLoaded = true;
+    addGeoJSONLayers();
+  });
+  function addGeoJSONLayers() {
+    const geojsonFiles = ["privateLandfill", "publicLandfill", "secondhandAssociation"];
     geojsonFiles.forEach(file => {
       map.addSource(file, {
-        type: 'geojson',
+        type: "geojson",
         data: `/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`
       });
       map.addLayer({
         id: `${file}-unclustered-point`,
-        type: 'symbol',
-        source: file
+        type: "symbol",
+        source: file,
+        layout: {
+          "icon-image": "marker-15",
+          "icon-allow-overlap": true,
+          "icon-size": 1
+        }
       });
-      map.on('sourcedata', function (e) {
-        if (e.sourceId === file) {
+      map.on("sourcedata", e => {
+        if (e.sourceId === file && isStyleLoaded) {
           const features = map.querySourceFeatures(file);
-          addLandfillMarkers(features, `marker_${file}`, `popup_${file}`);
+          addLandfillMarkers(features);
         }
       });
     });
-  });
+  }
+  function filterFeaturesByCategory(features, categories) {
+    return features.filter(feature => categories.includes(feature.properties.categorie));
+  }
   const addedMarkers = {};
-  const addLandfillMarkers = (landfills, markerClassName, popupClassName) => {
+  const addLandfillMarkers = landfills => {
     landfills.forEach(landfill => {
       const key = landfill.properties.id;
       if (!addedMarkers[key]) {
@@ -748,15 +761,53 @@ function initializeMap(mapContainer, lat, lng, zoom, accessToken) {
           landfill: landfill
         }), popupNode);
         const marker = new (mapbox_gl__WEBPACK_IMPORTED_MODULE_3___default().Marker)().setLngLat(landfill.geometry.coordinates).setPopup(new (mapbox_gl__WEBPACK_IMPORTED_MODULE_3___default().Popup)().setDOMContent(popupNode)).addTo(map);
-
-        // Add a class depending on the category of the landfill
         if (landfill.properties.categorie) {
           marker.getElement().classList.add(`marker-${landfill.properties.categorie}`);
         }
-        addedMarkers[key] = true;
+        addedMarkers[key] = marker;
       }
     });
   };
+  function removeAllMarkers() {
+    Object.values(addedMarkers).forEach(marker => marker.remove());
+    addedMarkers = {};
+  }
+  function createCategoryFilterDropdown(categories) {
+    const categoryFilterDropdown = document.createElement('select');
+    categoryFilterDropdown.className = 'mapboxgl-ctrl category-filter-dropdown';
+    categoryFilterDropdown.addEventListener('change', event => {
+      const selectedCategories = Array.from(event.target.options).filter(option => option.selected).map(option => option.value);
+      const features = map.queryRenderedFeatures({
+        layers: geojsonFiles.map(file => `${file}-unclustered-point`)
+      });
+      let filteredFeatures = features;
+      if (selectedCategories.length > 0) {
+        filteredFeatures = filterFeaturesByCategory(features, selectedCategories);
+      }
+      removeAllMarkers();
+      addLandfillMarkers(filteredFeatures);
+    });
+    const allCategoriesOption = document.createElement('option');
+    allCategoriesOption.value = '';
+    allCategoriesOption.text = 'Toutes les catégories';
+    categoryFilterDropdown.appendChild(allCategoriesOption);
+    categories.forEach(category => {
+      const option = document.createElement('option');
+      option.value = category;
+      option.text = category;
+      categoryFilterDropdown.appendChild(option);
+    });
+    return categoryFilterDropdown;
+  }
+  function createControlsContainer(categoryFilterDropdown) {
+    const controlsContainer = document.createElement('div');
+    controlsContainer.className = 'mapboxgl-ctrl-top-left';
+    const filterContainer = document.createElement('div');
+    filterContainer.className = 'mapboxgl-ctrl';
+    filterContainer.appendChild(categoryFilterDropdown);
+    controlsContainer.appendChild(filterContainer);
+    return controlsContainer;
+  }
 }
 
 /***/ }),
