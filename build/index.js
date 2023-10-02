@@ -605,12 +605,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _BoxInformations_BoxInformations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BoxInformations/BoxInformations */ "./src/components/BoxInformations/BoxInformations.js");
-/* harmony import */ var _BoxSchedule_BoxSchedule__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./BoxSchedule/BoxSchedule */ "./src/components/BoxSchedule/BoxSchedule.js");
-/* harmony import */ var _BoxWaste_BoxWaste__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./BoxWaste/BoxWaste */ "./src/components/BoxWaste/BoxWaste.js");
-
+/* harmony import */ var _BoxInformations_BoxInformations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BoxInformations/BoxInformations */ "./src/components/BoxInformations/BoxInformations.js");
+/* harmony import */ var _BoxSchedule_BoxSchedule__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BoxSchedule/BoxSchedule */ "./src/components/BoxSchedule/BoxSchedule.js");
+/* harmony import */ var _BoxWaste_BoxWaste__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./BoxWaste/BoxWaste */ "./src/components/BoxWaste/BoxWaste.js");
 
 
 
@@ -623,11 +620,11 @@ const Popup = ({
   } = landfill.properties;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "box_content"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", null, name), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_BoxInformations_BoxInformations__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", null, name), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_BoxInformations_BoxInformations__WEBPACK_IMPORTED_MODULE_1__["default"], {
     landfill: landfill
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_BoxSchedule_BoxSchedule__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_BoxSchedule_BoxSchedule__WEBPACK_IMPORTED_MODULE_2__["default"], {
     landfill: landfill
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_BoxWaste_BoxWaste__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_BoxWaste_BoxWaste__WEBPACK_IMPORTED_MODULE_3__["default"], {
     landfill: landfill
   }));
 };
@@ -679,7 +676,7 @@ function Edit(props) {
   const [mapboxAccessToken, setMapboxAccessToken] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('');
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     // fetch the api key
-    fetch('/wp-admin/admin-ajax.php?action=get_mapbox_access_token').then(response => response.json()).then(data => {
+    fetch('/wordpress/wp-admin/admin-ajax.php?action=get_mapbox_access_token').then(response => response.json()).then(data => {
       if (data && data.accessToken) {
         setMapboxAccessToken(data.accessToken);
       }
@@ -726,7 +723,7 @@ function Edit(props) {
         geojsonFiles.forEach(file => {
           map.current.addSource(file, {
             type: 'geojson',
-            data: `/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`
+            data: `/wordpress/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`
           });
           map.current.addLayer({
             id: `${file}-unclustered-point`,
@@ -924,17 +921,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
-
-/***/ }),
-
-/***/ "react":
-/*!************************!*\
-  !*** external "React" ***!
-  \************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = window["React"];
 
 /***/ }),
 

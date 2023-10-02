@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import BoxInformations from './BoxInformations/BoxInformations'
 import BoxSchedule from './BoxSchedule/BoxSchedule'
 import BoxWaste from './BoxWaste/BoxWaste'

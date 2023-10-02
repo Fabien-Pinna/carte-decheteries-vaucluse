@@ -17,7 +17,7 @@ export default function Edit(props) {
 
 	useEffect(() => {
 		// fetch the api key
-		fetch('/wp-admin/admin-ajax.php?action=get_mapbox_access_token')
+		fetch('/wordpress/wp-admin/admin-ajax.php?action=get_mapbox_access_token')
 			.then(response => response.json())
 			.then(data => {
 				if (data && data.accessToken) {
@@ -70,7 +70,7 @@ export default function Edit(props) {
 				geojsonFiles.forEach((file) => {
 					map.current.addSource(file, {
 						type: 'geojson',
-						data: `/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`,
+						data: `/wordpress/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`,
 
 					});
 

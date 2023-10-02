@@ -1,8 +1,8 @@
 @import "./components/Popup.scss";
 
 .wp-block-create-block-carte-decheteries-vaucluse {
-	height: 60vh;
-	width: 80vw;
+	height: 70vh !important;
+	width: 90vw !important;
 	position: relative;
 	margin: 2rem auto;
 
@@ -15,6 +15,11 @@
 		top: 0;
 		bottom: 0;
 		width: 100%;
+
+		h3 {
+			font-size: 1.5em;
+			margin-top: 0;
+		}
 
 		.mapboxgl-canvas-container {
 			.mapboxgl-marker {
