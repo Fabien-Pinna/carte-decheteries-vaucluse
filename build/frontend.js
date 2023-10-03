@@ -170,6 +170,41 @@ const Website = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createE
 
 /***/ }),
 
+/***/ "./src/api/fetchDataAndInitializeMap.js":
+/*!**********************************************!*\
+  !*** ./src/api/fetchDataAndInitializeMap.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _map_initializeMap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../map/initializeMap */ "./src/map/initializeMap.js");
+
+const fetchDataAndInitializeMap = async (mapContainer, lat, lng, zoom) => {
+  try {
+    const response = await fetch('/wordpress/wp-admin/admin-ajax.php?action=get_mapbox_access_token');
+    if (!response.ok) {
+      throw new Error('Failed to fetch Mapbox access token');
+    }
+    const {
+      accessToken
+    } = await response.json();
+    if (accessToken) {
+      (0,_map_initializeMap__WEBPACK_IMPORTED_MODULE_0__["default"])(mapContainer, lat, lng, zoom, accessToken);
+    } else {
+      console.error('Failed to retrieve Mapbox access token from the server.');
+    }
+  } catch (error) {
+    console.error('Error fetching Mapbox access token:', error);
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (fetchDataAndInitializeMap);
+
+/***/ }),
+
 /***/ "./src/components/BoxInformations/BoxContact/BoxAddress/BoxAddress.js":
 /*!****************************************************************************!*\
   !*** ./src/components/BoxInformations/BoxContact/BoxAddress/BoxAddress.js ***!
@@ -642,11 +677,14 @@ const Popup = ({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/dom-ready */ "@wordpress/dom-ready");
 /* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _map_initializeMap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./map/initializeMap */ "./src/map/initializeMap.js");
+/* harmony import */ var _api_fetchDataAndInitializeMap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./api/fetchDataAndInitializeMap */ "./src/api/fetchDataAndInitializeMap.js");
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
 
 
 
+const SMALL_SCREEN_ZOOM = 7.5;
+const MEDIUM_SCREEN_ZOOM = 8;
+const LARGE_SCREEN_ZOOM = 8.5;
 _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_0___default()(() => {
   const blocks = document.querySelectorAll('.wp-block-create-block-carte-decheteries-vaucluse');
   blocks.forEach(block => {
@@ -665,23 +703,13 @@ _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_0___default()(() => {
 
     // Adjust zoom depending on screen size
     if (window.innerWidth < 768) {
-      zoom = 7.5;
+      zoom = SMALL_SCREEN_ZOOM;
     } else if (window.innerWidth >= 768 && window.innerWidth < 1024) {
-      zoom = 8;
+      zoom = MEDIUM_SCREEN_ZOOM;
     } else {
-      zoom = 8.5;
+      zoom = LARGE_SCREEN_ZOOM;
     }
-
-    // get api key
-    fetch('/wordpress/wp-admin/admin-ajax.php?action=get_mapbox_access_token').then(response => response.json()).then(data => {
-      if (data && data.accessToken) {
-        (0,_map_initializeMap__WEBPACK_IMPORTED_MODULE_1__["default"])(mapContainer, lat, lng, zoom, data.accessToken);
-      } else {
-        console.error('Failed to retrieve Mapbox access token from the server.');
-      }
-    }).catch(error => {
-      console.error('Error fetching Mapbox access token:', error);
-    });
+    (0,_api_fetchDataAndInitializeMap__WEBPACK_IMPORTED_MODULE_1__["default"])(mapContainer, lat, lng, zoom);
   });
 });
 
@@ -719,10 +747,87 @@ const addcontrols = map => {
 
 /***/ }),
 
+/***/ "./src/map/geoJSONLayers.js":
+/*!**********************************!*\
+  !*** ./src/map/geoJSONLayers.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _markers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./markers */ "./src/map/markers.js");
+
+const addGeoJSONLayers = (map, isStyleLoaded) => {
+  const geojsonFiles = ["privateLandfill", "publicLandfill", "secondhandAssociation"];
+  geojsonFiles.forEach(file => {
+    map.addSource(file, {
+      type: "geojson",
+      data: `/wordpress/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`
+    });
+    map.addLayer({
+      id: `${file}-unclustered-point`,
+      type: "symbol",
+      source: file
+    });
+    map.on("sourcedata", e => {
+      if (e.sourceId === file && isStyleLoaded) {
+        const features = map.querySourceFeatures(file);
+        (0,_markers__WEBPACK_IMPORTED_MODULE_0__["default"])(features, `popup_${file}`, map);
+      }
+    });
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addGeoJSONLayers);
+
+/***/ }),
+
 /***/ "./src/map/initializeMap.js":
 /*!**********************************!*\
   !*** ./src/map/initializeMap.js ***!
   \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mapbox-gl */ "./node_modules/mapbox-gl/dist/mapbox-gl.js");
+/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mapbox_gl__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _controls__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./controls */ "./src/map/controls.js");
+/* harmony import */ var _geoJSONLayers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./geoJSONLayers */ "./src/map/geoJSONLayers.js");
+/* harmony import */ var _markers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./markers */ "./src/map/markers.js");
+
+
+
+
+const initializeMap = (mapContainer, lat, lng, zoom, accessToken) => {
+  (mapbox_gl__WEBPACK_IMPORTED_MODULE_0___default().accessToken) = accessToken;
+  const map = new (mapbox_gl__WEBPACK_IMPORTED_MODULE_0___default().Map)({
+    container: mapContainer,
+    style: 'mapbox://styles/fabioloco/clgqlk3z700ji01qza607558j',
+    center: [lng, lat],
+    zoom: zoom
+  });
+  let isStyleLoaded = false;
+  map.on('style.load', function () {
+    isStyleLoaded = true;
+    (0,_geoJSONLayers__WEBPACK_IMPORTED_MODULE_2__["default"])(map, isStyleLoaded);
+  });
+  (0,_controls__WEBPACK_IMPORTED_MODULE_1__["default"])(map);
+  (0,_markers__WEBPACK_IMPORTED_MODULE_3__["default"])([], '', map);
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initializeMap);
+
+/***/ }),
+
+/***/ "./src/map/markers.js":
+/*!****************************!*\
+  !*** ./src/map/markers.js ***!
+  \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -737,66 +842,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! mapbox-gl */ "./node_modules/mapbox-gl/dist/mapbox-gl.js");
 /* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(mapbox_gl__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_Popup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Popup */ "./src/components/Popup.js");
-/* harmony import */ var _controls__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./controls */ "./src/map/controls.js");
 
 
 
 
-
-const initializeMap = (mapContainer, lat, lng, zoom, accessToken) => {
-  (mapbox_gl__WEBPACK_IMPORTED_MODULE_2___default().accessToken) = accessToken;
-  const map = new (mapbox_gl__WEBPACK_IMPORTED_MODULE_2___default().Map)({
-    container: mapContainer,
-    style: 'mapbox://styles/fabioloco/clgqlk3z700ji01qza607558j',
-    center: [lng, lat],
-    zoom: zoom
-  });
-  (0,_controls__WEBPACK_IMPORTED_MODULE_4__["default"])(map);
-  let isStyleLoaded = false;
-  map.on('style.load', function () {
-    isStyleLoaded = true;
-    addGeoJSONLayers();
-  });
-  const addGeoJSONLayers = () => {
-    const geojsonFiles = ["privateLandfill", "publicLandfill", "secondhandAssociation"];
-    geojsonFiles.forEach(file => {
-      map.addSource(file, {
-        type: "geojson",
-        data: `/wordpress/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`
-      });
-      map.addLayer({
-        id: `${file}-unclustered-point`,
-        type: "symbol",
-        source: file
-      });
-      map.on("sourcedata", e => {
-        if (e.sourceId === file && isStyleLoaded) {
-          const features = map.querySourceFeatures(file);
-          addLandfillMarkers(features, `popup_${file}`);
-        }
-      });
-    });
-  };
-  const addedMarkers = {};
-  const addLandfillMarkers = (landfills, popupClassName) => {
-    landfills.forEach(landfill => {
-      const key = landfill.properties.id;
-      if (!addedMarkers[key]) {
-        const popupNode = document.createElement('div');
-        popupNode.className = popupClassName;
-        react_dom__WEBPACK_IMPORTED_MODULE_1___default().render((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Popup__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          landfill: landfill
-        }), popupNode);
-        const marker = new (mapbox_gl__WEBPACK_IMPORTED_MODULE_2___default().Marker)().setLngLat(landfill.geometry.coordinates).setPopup(new (mapbox_gl__WEBPACK_IMPORTED_MODULE_2___default().Popup)().setDOMContent(popupNode)).addTo(map);
-        if (landfill.properties.categorie) {
-          marker.getElement().classList.add(`marker-${landfill.properties.categorie}`);
-        }
-        addedMarkers[key] = marker;
+const addedMarkers = {};
+const addLandfillMarkers = (landfills, popupClassName, map) => {
+  landfills.forEach(landfill => {
+    const key = landfill.properties.id;
+    if (!addedMarkers[key]) {
+      const popupNode = document.createElement('div');
+      popupNode.className = popupClassName;
+      react_dom__WEBPACK_IMPORTED_MODULE_1___default().render((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Popup__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        landfill: landfill
+      }), popupNode);
+      const marker = new (mapbox_gl__WEBPACK_IMPORTED_MODULE_2___default().Marker)().setLngLat(landfill.geometry.coordinates).setPopup(new (mapbox_gl__WEBPACK_IMPORTED_MODULE_2___default().Popup)().setDOMContent(popupNode)).addTo(map);
+      if (landfill.properties.categorie) {
+        marker.getElement().classList.add(`marker-${landfill.properties.categorie}`);
       }
-    });
-  };
+      addedMarkers[key] = marker;
+    }
+  });
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initializeMap);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addLandfillMarkers);
 
 /***/ }),
 

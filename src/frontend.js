@@ -1,7 +1,11 @@
 import domReady from '@wordpress/dom-ready';
-import initializeMap from './map/initializeMap';
+import fetchDataAndInitializeMap from './api/fetchDataAndInitializeMap';
 
 import './style.scss';
+
+const SMALL_SCREEN_ZOOM = 7.5;
+const MEDIUM_SCREEN_ZOOM = 8;
+const LARGE_SCREEN_ZOOM = 8.5;
 
 domReady(() => {
     const blocks = document.querySelectorAll('.wp-block-create-block-carte-decheteries-vaucluse');
@@ -23,25 +27,13 @@ domReady(() => {
 
         // Adjust zoom depending on screen size
         if (window.innerWidth < 768) {
-            zoom = 7.5;
+            zoom = SMALL_SCREEN_ZOOM;
         } else if (window.innerWidth >= 768 && window.innerWidth < 1024) {
-            zoom = 8;
+            zoom = MEDIUM_SCREEN_ZOOM;
         } else {
-            zoom = 8.5;
+            zoom = LARGE_SCREEN_ZOOM;
         }
 
-        // get api key
-        fetch('/wordpress/wp-admin/admin-ajax.php?action=get_mapbox_access_token')
-            .then((response) => response.json())
-            .then((data) => {
-                if (data && data.accessToken) {
-                    initializeMap(mapContainer, lat, lng, zoom, data.accessToken);
-                } else {
-                    console.error('Failed to retrieve Mapbox access token from the server.');
-                }
-            })
-            .catch((error) => {
-                console.error('Error fetching Mapbox access token:', error);
-            });
+        fetchDataAndInitializeMap(mapContainer, lat, lng, zoom);
     });
 });
