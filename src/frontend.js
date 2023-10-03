@@ -1,13 +1,11 @@
-import ReactDOM from 'react-dom';
-import domReady from './map/domReady';
+import domReady from '@wordpress/dom-ready';
 import initializeMap from './map/initializeMap';
-import fetchAccessToken from './api/api';
 
 import './style.scss';
 
 domReady(() => {
     const blocks = document.querySelectorAll('.wp-block-create-block-carte-decheteries-vaucluse');
-    blocks.forEach(async (block) => {
+    blocks.forEach((block) => {
         const mapContainer = block.querySelector('.map-container');
         if (!mapContainer) {
             console.error(`No map container found for block: ${block.outerHTML}`);
@@ -23,13 +21,27 @@ domReady(() => {
             return;
         }
 
-        zoom = window.innerWidth < 768 ? 7.5 : window.innerWidth < 1024 ? 8 : 8.5;
-
-        const accessToken = await fetchAccessToken();
-        if (accessToken) {
-            initializeMap(mapContainer, lat, lng, zoom, accessToken);
+        // Adjust zoom depending on screen size
+        if (window.innerWidth < 768) {
+            zoom = 7.5;
+        } else if (window.innerWidth >= 768 && window.innerWidth < 1024) {
+            zoom = 8;
         } else {
-            console.error('Failed to retrieve Mapbox access token.');
+            zoom = 8.5;
         }
+
+        // get api key
+        fetch('/wordpress/wp-admin/admin-ajax.php?action=get_mapbox_access_token')
+            .then((response) => response.json())
+            .then((data) => {
+                if (data && data.accessToken) {
+                    initializeMap(mapContainer, lat, lng, zoom, data.accessToken);
+                } else {
+                    console.error('Failed to retrieve Mapbox access token from the server.');
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching Mapbox access token:', error);
+            });
     });
 });
