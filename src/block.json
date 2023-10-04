@@ -3,10 +3,10 @@
 	"apiVersion": 2,
 	"name": "create-block/carte-decheteries-vaucluse",
 	"version": "0.1.0",
-	"title": "Carte des déchèteries du Vaucluse",
+	"title": "Carte des décheteries du Vaucluse",
 	"category": "widgets",
 	"icon": "location-alt",
-	"description": "Une carte interactive des déchèteries du Vaucluse",
+	"description": "Une carte interactive des décheteries du Vaucluse",
 	"supports": {
 		"html": false
 	},

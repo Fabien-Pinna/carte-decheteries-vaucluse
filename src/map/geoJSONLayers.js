@@ -8,11 +8,16 @@ const addGeoJSONLayers = (map, isStyleLoaded) => {
             data: `/wordpress/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`,
         });
 
-        map.addLayer({
-            id: `${file}-unclustered-point`,
-            type: "symbol",
-            source: file
-        });
+        const layerId = `${file}-unclustered-point`
+
+        if (!map.getLayer(layerId)) {
+            map.addLayer({
+                id: layerId,
+                type: "symbol",
+                source: file
+            });
+
+        }
 
         map.on("sourcedata", (e) => {
             if (e.sourceId === file && isStyleLoaded) {

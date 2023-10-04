@@ -1,6 +1,6 @@
 import mapboxgl from 'mapbox-gl';
 
-const addcontrols = (map) => {
+const addControls = (map) => {
     // Add fullscreen control
     const fullscreenControl = new mapboxgl.FullscreenControl();
     map.addControl(fullscreenControl, 'bottom-right');
@@ -15,4 +15,4 @@ const addcontrols = (map) => {
     map.addControl(geolocateControl);
 }
 
-export default addcontrols
+export default addControls

@@ -1,4 +1,4 @@
-import { Phone, PhoneCall } from '../../../../Icons/Icons'
+import { Phone, PhoneCall } from '../../../../../Icons/Icons'
 
 const BoxPhone = ({ landfill }) => {
 

@@ -1,4 +1,4 @@
-import { CheckOk, CheckNo } from '../../Icons/Icons';
+import { CheckOk, CheckNo } from '../../../Icons/Icons';
 
 const BoxWaste = ({ landfill }) => {
     const {

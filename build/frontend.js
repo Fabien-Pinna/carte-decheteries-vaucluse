@@ -205,10 +205,10 @@ const fetchDataAndInitializeMap = async (mapContainer, lat, lng, zoom) => {
 
 /***/ }),
 
-/***/ "./src/components/BoxInformations/BoxContact/BoxAddress/BoxAddress.js":
-/*!****************************************************************************!*\
-  !*** ./src/components/BoxInformations/BoxContact/BoxAddress/BoxAddress.js ***!
-  \****************************************************************************/
+/***/ "./src/components/Popup/BoxInformations/BoxContact/BoxAddress/BoxAddress.js":
+/*!**********************************************************************************!*\
+  !*** ./src/components/Popup/BoxInformations/BoxContact/BoxAddress/BoxAddress.js ***!
+  \**********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -218,7 +218,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Icons_Icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../Icons/Icons */ "./src/Icons/Icons.js");
+/* harmony import */ var _Icons_Icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../Icons/Icons */ "./src/Icons/Icons.js");
 
 
 const Address = ({
@@ -242,10 +242,10 @@ const Address = ({
 
 /***/ }),
 
-/***/ "./src/components/BoxInformations/BoxContact/BoxContact.js":
-/*!*****************************************************************!*\
-  !*** ./src/components/BoxInformations/BoxContact/BoxContact.js ***!
-  \*****************************************************************/
+/***/ "./src/components/Popup/BoxInformations/BoxContact/BoxContact.js":
+/*!***********************************************************************!*\
+  !*** ./src/components/Popup/BoxInformations/BoxContact/BoxContact.js ***!
+  \***********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -255,9 +255,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _BoxAddress_BoxAddress__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BoxAddress/BoxAddress */ "./src/components/BoxInformations/BoxContact/BoxAddress/BoxAddress.js");
-/* harmony import */ var _BoxPhone_BoxPhone__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BoxPhone/BoxPhone */ "./src/components/BoxInformations/BoxContact/BoxPhone/BoxPhone.js");
-/* harmony import */ var _BoxWebsite_BoxWebsite__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./BoxWebsite/BoxWebsite */ "./src/components/BoxInformations/BoxContact/BoxWebsite/BoxWebsite.js");
+/* harmony import */ var _BoxAddress_BoxAddress__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BoxAddress/BoxAddress */ "./src/components/Popup/BoxInformations/BoxContact/BoxAddress/BoxAddress.js");
+/* harmony import */ var _BoxPhone_BoxPhone__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BoxPhone/BoxPhone */ "./src/components/Popup/BoxInformations/BoxContact/BoxPhone/BoxPhone.js");
+/* harmony import */ var _BoxWebsite_BoxWebsite__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./BoxWebsite/BoxWebsite */ "./src/components/Popup/BoxInformations/BoxContact/BoxWebsite/BoxWebsite.js");
 
 
 
@@ -279,10 +279,10 @@ const BoxContact = ({
 
 /***/ }),
 
-/***/ "./src/components/BoxInformations/BoxContact/BoxPhone/BoxPhone.js":
-/*!************************************************************************!*\
-  !*** ./src/components/BoxInformations/BoxContact/BoxPhone/BoxPhone.js ***!
-  \************************************************************************/
+/***/ "./src/components/Popup/BoxInformations/BoxContact/BoxPhone/BoxPhone.js":
+/*!******************************************************************************!*\
+  !*** ./src/components/Popup/BoxInformations/BoxContact/BoxPhone/BoxPhone.js ***!
+  \******************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -292,7 +292,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Icons_Icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../Icons/Icons */ "./src/Icons/Icons.js");
+/* harmony import */ var _Icons_Icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../Icons/Icons */ "./src/Icons/Icons.js");
 
 
 const BoxPhone = ({
@@ -320,10 +320,10 @@ const BoxPhone = ({
 
 /***/ }),
 
-/***/ "./src/components/BoxInformations/BoxContact/BoxWebsite/BoxWebsite.js":
-/*!****************************************************************************!*\
-  !*** ./src/components/BoxInformations/BoxContact/BoxWebsite/BoxWebsite.js ***!
-  \****************************************************************************/
+/***/ "./src/components/Popup/BoxInformations/BoxContact/BoxWebsite/BoxWebsite.js":
+/*!**********************************************************************************!*\
+  !*** ./src/components/Popup/BoxInformations/BoxContact/BoxWebsite/BoxWebsite.js ***!
+  \**********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -333,7 +333,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Icons_Icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../Icons/Icons */ "./src/Icons/Icons.js");
+/* harmony import */ var _Icons_Icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../Icons/Icons */ "./src/Icons/Icons.js");
 
 
 const BoxWebsite = ({
@@ -360,10 +360,10 @@ const BoxWebsite = ({
 
 /***/ }),
 
-/***/ "./src/components/BoxInformations/BoxDescription/BoxDescription.js":
-/*!*************************************************************************!*\
-  !*** ./src/components/BoxInformations/BoxDescription/BoxDescription.js ***!
-  \*************************************************************************/
+/***/ "./src/components/Popup/BoxInformations/BoxDescription/BoxDescription.js":
+/*!*******************************************************************************!*\
+  !*** ./src/components/Popup/BoxInformations/BoxDescription/BoxDescription.js ***!
+  \*******************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -373,7 +373,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Icons_Icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Icons/Icons */ "./src/Icons/Icons.js");
+/* harmony import */ var _Icons_Icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../Icons/Icons */ "./src/Icons/Icons.js");
 
 
 const BoxDescription = ({
@@ -390,10 +390,10 @@ const BoxDescription = ({
 
 /***/ }),
 
-/***/ "./src/components/BoxInformations/BoxInformations.js":
-/*!***********************************************************!*\
-  !*** ./src/components/BoxInformations/BoxInformations.js ***!
-  \***********************************************************/
+/***/ "./src/components/Popup/BoxInformations/BoxInformations.js":
+/*!*****************************************************************!*\
+  !*** ./src/components/Popup/BoxInformations/BoxInformations.js ***!
+  \*****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -403,8 +403,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _BoxContact_BoxContact__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BoxContact/BoxContact */ "./src/components/BoxInformations/BoxContact/BoxContact.js");
-/* harmony import */ var _BoxDescription_BoxDescription__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BoxDescription/BoxDescription */ "./src/components/BoxInformations/BoxDescription/BoxDescription.js");
+/* harmony import */ var _BoxContact_BoxContact__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BoxContact/BoxContact */ "./src/components/Popup/BoxInformations/BoxContact/BoxContact.js");
+/* harmony import */ var _BoxDescription_BoxDescription__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BoxDescription/BoxDescription */ "./src/components/Popup/BoxInformations/BoxDescription/BoxDescription.js");
 
 
 
@@ -423,10 +423,10 @@ const BoxInformations = ({
 
 /***/ }),
 
-/***/ "./src/components/BoxSchedule/Body/Body.js":
-/*!*************************************************!*\
-  !*** ./src/components/BoxSchedule/Body/Body.js ***!
-  \*************************************************/
+/***/ "./src/components/Popup/BoxSchedule/Body/Body.js":
+/*!*******************************************************!*\
+  !*** ./src/components/Popup/BoxSchedule/Body/Body.js ***!
+  \*******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -477,10 +477,10 @@ const Body = ({
 
 /***/ }),
 
-/***/ "./src/components/BoxSchedule/BoxSchedule.js":
-/*!***************************************************!*\
-  !*** ./src/components/BoxSchedule/BoxSchedule.js ***!
-  \***************************************************/
+/***/ "./src/components/Popup/BoxSchedule/BoxSchedule.js":
+/*!*********************************************************!*\
+  !*** ./src/components/Popup/BoxSchedule/BoxSchedule.js ***!
+  \*********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -490,9 +490,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Header_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header/Header */ "./src/components/BoxSchedule/Header/Header.js");
-/* harmony import */ var _Body_Body__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Body/Body */ "./src/components/BoxSchedule/Body/Body.js");
-/* harmony import */ var _HoursInfos_HoursInfos__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./HoursInfos/HoursInfos */ "./src/components/BoxSchedule/HoursInfos/HoursInfos.js");
+/* harmony import */ var _Header_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header/Header */ "./src/components/Popup/BoxSchedule/Header/Header.js");
+/* harmony import */ var _Body_Body__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Body/Body */ "./src/components/Popup/BoxSchedule/Body/Body.js");
+/* harmony import */ var _HoursInfos_HoursInfos__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./HoursInfos/HoursInfos */ "./src/components/Popup/BoxSchedule/HoursInfos/HoursInfos.js");
 
 
 
@@ -512,10 +512,10 @@ const BoxSchedule = ({
 
 /***/ }),
 
-/***/ "./src/components/BoxSchedule/Header/Header.js":
-/*!*****************************************************!*\
-  !*** ./src/components/BoxSchedule/Header/Header.js ***!
-  \*****************************************************/
+/***/ "./src/components/Popup/BoxSchedule/Header/Header.js":
+/*!***********************************************************!*\
+  !*** ./src/components/Popup/BoxSchedule/Header/Header.js ***!
+  \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -536,10 +536,10 @@ const Header = () => {
 
 /***/ }),
 
-/***/ "./src/components/BoxSchedule/HoursInfos/HoursInfos.js":
-/*!*************************************************************!*\
-  !*** ./src/components/BoxSchedule/HoursInfos/HoursInfos.js ***!
-  \*************************************************************/
+/***/ "./src/components/Popup/BoxSchedule/HoursInfos/HoursInfos.js":
+/*!*******************************************************************!*\
+  !*** ./src/components/Popup/BoxSchedule/HoursInfos/HoursInfos.js ***!
+  \*******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -575,10 +575,10 @@ const HoursInfos = ({
 
 /***/ }),
 
-/***/ "./src/components/BoxWaste/BoxWaste.js":
-/*!*********************************************!*\
-  !*** ./src/components/BoxWaste/BoxWaste.js ***!
-  \*********************************************/
+/***/ "./src/components/Popup/BoxWaste/BoxWaste.js":
+/*!***************************************************!*\
+  !*** ./src/components/Popup/BoxWaste/BoxWaste.js ***!
+  \***************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -588,7 +588,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Icons_Icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Icons/Icons */ "./src/Icons/Icons.js");
+/* harmony import */ var _Icons_Icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Icons/Icons */ "./src/Icons/Icons.js");
 
 
 const BoxWaste = ({
@@ -627,10 +627,10 @@ const BoxWaste = ({
 
 /***/ }),
 
-/***/ "./src/components/Popup.js":
-/*!*********************************!*\
-  !*** ./src/components/Popup.js ***!
-  \*********************************/
+/***/ "./src/components/Popup/Popup.js":
+/*!***************************************!*\
+  !*** ./src/components/Popup/Popup.js ***!
+  \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -640,9 +640,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _BoxInformations_BoxInformations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BoxInformations/BoxInformations */ "./src/components/BoxInformations/BoxInformations.js");
-/* harmony import */ var _BoxSchedule_BoxSchedule__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BoxSchedule/BoxSchedule */ "./src/components/BoxSchedule/BoxSchedule.js");
-/* harmony import */ var _BoxWaste_BoxWaste__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./BoxWaste/BoxWaste */ "./src/components/BoxWaste/BoxWaste.js");
+/* harmony import */ var _BoxInformations_BoxInformations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BoxInformations/BoxInformations */ "./src/components/Popup/BoxInformations/BoxInformations.js");
+/* harmony import */ var _BoxSchedule_BoxSchedule__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BoxSchedule/BoxSchedule */ "./src/components/Popup/BoxSchedule/BoxSchedule.js");
+/* harmony import */ var _BoxWaste_BoxWaste__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./BoxWaste/BoxWaste */ "./src/components/Popup/BoxWaste/BoxWaste.js");
 
 
 
@@ -729,7 +729,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mapbox-gl */ "./node_modules/mapbox-gl/dist/mapbox-gl.js");
 /* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mapbox_gl__WEBPACK_IMPORTED_MODULE_0__);
 
-const addcontrols = map => {
+const addControls = map => {
   // Add fullscreen control
   const fullscreenControl = new (mapbox_gl__WEBPACK_IMPORTED_MODULE_0___default().FullscreenControl)();
   map.addControl(fullscreenControl, 'bottom-right');
@@ -743,7 +743,7 @@ const addcontrols = map => {
   });
   map.addControl(geolocateControl);
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addcontrols);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addControls);
 
 /***/ }),
 
@@ -767,11 +767,14 @@ const addGeoJSONLayers = (map, isStyleLoaded) => {
       type: "geojson",
       data: `/wordpress/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`
     });
-    map.addLayer({
-      id: `${file}-unclustered-point`,
-      type: "symbol",
-      source: file
-    });
+    const layerId = `${file}-unclustered-point`;
+    if (!map.getLayer(layerId)) {
+      map.addLayer({
+        id: layerId,
+        type: "symbol",
+        source: file
+      });
+    }
     map.on("sourcedata", e => {
       if (e.sourceId === file && isStyleLoaded) {
         const features = map.querySourceFeatures(file);
@@ -841,7 +844,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! mapbox-gl */ "./node_modules/mapbox-gl/dist/mapbox-gl.js");
 /* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(mapbox_gl__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_Popup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Popup */ "./src/components/Popup.js");
+/* harmony import */ var _components_Popup_Popup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Popup/Popup */ "./src/components/Popup/Popup.js");
 
 
 
@@ -853,7 +856,7 @@ const addLandfillMarkers = (landfills, popupClassName, map) => {
     if (!addedMarkers[key]) {
       const popupNode = document.createElement('div');
       popupNode.className = popupClassName;
-      react_dom__WEBPACK_IMPORTED_MODULE_1___default().render((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Popup__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      react_dom__WEBPACK_IMPORTED_MODULE_1___default().render((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Popup_Popup__WEBPACK_IMPORTED_MODULE_3__["default"], {
         landfill: landfill
       }), popupNode);
       const marker = new (mapbox_gl__WEBPACK_IMPORTED_MODULE_2___default().Marker)().setLngLat(landfill.geometry.coordinates).setPopup(new (mapbox_gl__WEBPACK_IMPORTED_MODULE_2___default().Popup)().setDOMContent(popupNode)).addTo(map);

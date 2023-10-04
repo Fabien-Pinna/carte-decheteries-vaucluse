@@ -1,5 +1,5 @@
 import mapboxgl from 'mapbox-gl';
-import addcontrols from './controls';
+import addControls from './controls';
 import addGeoJSONLayers from './geoJSONLayers';
 import addLandfillMarkers from './markers';
 
@@ -20,7 +20,7 @@ const initializeMap = (mapContainer, lat, lng, zoom, accessToken) => {
         addGeoJSONLayers(map, isStyleLoaded);
     });
 
-    addcontrols(map);
+    addControls(map);
     addLandfillMarkers([], '', map)
 }
 

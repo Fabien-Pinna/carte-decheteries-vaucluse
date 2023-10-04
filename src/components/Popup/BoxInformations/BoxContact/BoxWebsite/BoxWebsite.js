@@ -1,4 +1,4 @@
-import { Website, NewWindow } from '../../../../Icons/Icons';
+import { Website, NewWindow } from '../../../../../Icons/Icons';
 
 const BoxWebsite = ({ landfill }) => {
     const { email, website } = landfill.properties;

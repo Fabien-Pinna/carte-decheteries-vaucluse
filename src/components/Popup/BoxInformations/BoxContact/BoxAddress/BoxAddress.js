@@ -1,4 +1,4 @@
-import { Marker } from '../../../../Icons/Icons'
+import { Marker } from '../../../../../Icons/Icons'
 
 const Address = ({ landfill }) => {
 

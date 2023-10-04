@@ -1,4 +1,4 @@
-import { Card, Money } from '../../../Icons/Icons'
+import { Card, Money } from '../../../../Icons/Icons'
 
 const BoxDescription = ({ landfill }) => {
 

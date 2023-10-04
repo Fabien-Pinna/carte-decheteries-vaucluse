@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import mapboxgl from 'mapbox-gl';
-import Popup from '../components/Popup'
+import Popup from '../components/Popup/Popup'
 
 const addedMarkers = {};
 
