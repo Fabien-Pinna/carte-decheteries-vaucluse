@@ -1,43 +1,18 @@
-import React, { useState } from 'react';
-import './FilterControls.scss';
-
-const FilterControls = ({ onCategoryChange }) => {
-    const [selectedCategories, setSelectedCategories] = useState({});
-
-    const handleCheckboxChange = (e, category) => {
-        setSelectedCategories({
-            ...selectedCategories,
-            [category]: e.target.checked,
-        });
-        onCategoryChange(selectedCategories);
-    };
-
+const FilterControls = () => {
     return (
         <div className="map-overlay">
             <fieldset>
                 <nav id="filter-group" className="filter-group">
                     <label>
-                        <input
-                            type="checkbox"
-                            checked={selectedCategories['privateLandfill'] || false}
-                            onChange={(e) => handleCheckboxChange(e, 'privateLandfill')}
-                        />
+                        <input type="checkbox" />
                         Private Landfill
                     </label>
                     <label>
-                        <input
-                            type="checkbox"
-                            checked={selectedCategories['publicLandfill'] || false}
-                            onChange={(e) => handleCheckboxChange(e, 'publicLandfill')}
-                        />
+                        <input type="checkbox" />
                         Public Landfill
                     </label>
                     <label>
-                        <input
-                            type="checkbox"
-                            checked={selectedCategories['secondhandAssociation'] || false}
-                            onChange={(e) => handleCheckboxChange(e, 'secondhandAssociation')}
-                        />
+                        <input type="checkbox" />
                         Secondhand Association
                     </label>
                 </nav>
