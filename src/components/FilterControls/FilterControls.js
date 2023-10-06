@@ -1,6 +1,6 @@
 const FilterControls = () => {
     return (
-        <div className="map-overlay">
+        <>
             <fieldset>
                 <nav id="filter-group" className="filter-group">
                     <label>
@@ -17,7 +17,7 @@ const FilterControls = () => {
                     </label>
                 </nav>
             </fieldset>
-        </div>
+        </>
     );
 };
 

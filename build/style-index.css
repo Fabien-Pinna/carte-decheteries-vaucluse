@@ -285,6 +285,12 @@
   color: white;
 }
 
+#map-filter-controls {
+  position: absolute;
+  z-index: 1000;
+  background: #fff;
+}
+
 .wp-block-create-block-carte-decheteries-vaucluse {
   height: 70vh;
   width: 90vw;

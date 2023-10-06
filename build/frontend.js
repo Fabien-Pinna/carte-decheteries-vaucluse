@@ -205,6 +205,36 @@ const fetchDataAndInitializeMap = async (mapContainer, lat, lng, zoom) => {
 
 /***/ }),
 
+/***/ "./src/components/FilterControls/FilterControls.js":
+/*!*********************************************************!*\
+  !*** ./src/components/FilterControls/FilterControls.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+const FilterControls = () => {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("fieldset", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("nav", {
+    id: "filter-group",
+    className: "filter-group"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "checkbox"
+  }), "Private Landfill"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "checkbox"
+  }), "Public Landfill"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "checkbox"
+  }), "Secondhand Association"))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FilterControls);
+
+/***/ }),
+
 /***/ "./src/components/Popup/BoxInformations/BoxContact/BoxAddress/BoxAddress.js":
 /*!**********************************************************************************!*\
   !*** ./src/components/Popup/BoxInformations/BoxContact/BoxAddress/BoxAddress.js ***!
@@ -715,6 +745,43 @@ _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_0___default()(() => {
 
 /***/ }),
 
+/***/ "./src/map/addFilterControls.js":
+/*!**************************************!*\
+  !*** ./src/map/addFilterControls.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "react-dom");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! mapbox-gl */ "./node_modules/mapbox-gl/dist/mapbox-gl.js");
+/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(mapbox_gl__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_FilterControls_FilterControls__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/FilterControls/FilterControls */ "./src/components/FilterControls/FilterControls.js");
+
+
+
+
+const addFilterControls = map => {
+  if (!(map instanceof (mapbox_gl__WEBPACK_IMPORTED_MODULE_2___default().Map))) {
+    console.error('Invalid map instance passed to addFilterControls');
+    return;
+  }
+  const filterControls = document.createElement('div');
+  filterControls.id = 'map-filter-controls';
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default().render((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_FilterControls_FilterControls__WEBPACK_IMPORTED_MODULE_3__["default"], null), filterControls);
+  const mapContainer = map.getContainer();
+  mapContainer.appendChild(filterControls);
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addFilterControls);
+
+/***/ }),
+
 /***/ "./src/map/controls.js":
 /*!*****************************!*\
   !*** ./src/map/controls.js ***!
@@ -803,6 +870,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controls__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./controls */ "./src/map/controls.js");
 /* harmony import */ var _geoJSONLayers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./geoJSONLayers */ "./src/map/geoJSONLayers.js");
 /* harmony import */ var _markers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./markers */ "./src/map/markers.js");
+/* harmony import */ var _addFilterControls__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./addFilterControls */ "./src/map/addFilterControls.js");
+
 
 
 
@@ -822,6 +891,7 @@ const initializeMap = (mapContainer, lat, lng, zoom, accessToken) => {
   });
   (0,_controls__WEBPACK_IMPORTED_MODULE_1__["default"])(map);
   (0,_markers__WEBPACK_IMPORTED_MODULE_3__["default"])([], '', map);
+  (0,_addFilterControls__WEBPACK_IMPORTED_MODULE_4__["default"])(map);
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initializeMap);
 
