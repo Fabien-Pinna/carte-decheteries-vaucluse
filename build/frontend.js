@@ -873,6 +873,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const addGeoJSONLayers = (map, popupClassName) => {
   const geojsonFiles = ["privateLandfill", "publicLandfill", "secondhandAssociation"];
+  const wasteTypes = ["Amiante", "Bois", "Cartons", "DEEE", "Encombrants", "Gravats", "Huiles", "Metaux", "Pneus", "Vegetaux", "Verre"];
   const filterGroup = document.createElement('nav');
   filterGroup.id = 'filter-group';
   filterGroup.className = 'filter-group';
@@ -881,18 +882,41 @@ const addGeoJSONLayers = (map, popupClassName) => {
   wasteFilterGroup.id = 'waste-filter-group';
   wasteFilterGroup.className = 'waste-filter-group';
   document.getElementsByClassName('map-container')[0].appendChild(wasteFilterGroup);
-  const wasteTypes = ["Amiante", "Bois", "Cartons", "DEEE", "Encombrants", "Gravats", "Huiles", "Metaux", "Pneus", "Vegetaux", "Verre"];
 
-  // Waste filter
-
-  const updateWasteFilter = () => {
+  // Create reset button
+  const resetButton = document.createElement('button');
+  resetButton.id = 'reset-filters';
+  resetButton.className = 'reset-filters';
+  resetButton.textContent = 'Reset Filters';
+  document.getElementsByClassName('map-container')[0].appendChild(resetButton);
+  const applyCombinedFilters = () => {
     const checkedWastes = [...document.querySelectorAll('#waste-filter-group input')].filter(el => el.checked).map(el => el.id);
+    const checkedSymbols = [...document.querySelectorAll('#filter-group input')].filter(el => el.checked).map(el => el.id);
     geojsonFiles.forEach(file => {
       const layerId = `${file}-unclustered-point`;
-      const filterConditions = ['all', ...checkedWastes.map(wasteType => ['==', wasteType, true])];
-      map.setFilter(layerId, filterConditions);
+      const wasteFilterConditions = ['all', ...checkedWastes.map(wasteType => ['==', wasteType, true])];
+      const symbolFilterConditions = ['in', 'icon', ...checkedSymbols];
+      const combinedFilterConditions = ['all', wasteFilterConditions, symbolFilterConditions];
+      map.setFilter(layerId, combinedFilterConditions);
     });
   };
+  const resetFilters = () => {
+    // Reset waste type filters
+    document.querySelectorAll('#waste-filter-group input').forEach(input => {
+      input.checked = false;
+    });
+
+    // Reset landfill category filters
+    document.querySelectorAll('#filter-group input').forEach(input => {
+      input.checked = true;
+    });
+
+    // Apply filters to update the map
+    applyCombinedFilters();
+  };
+
+  // Add event listener to reset button
+  resetButton.addEventListener('click', resetFilters);
   for (const wasteType of wasteTypes) {
     const input = document.createElement('input');
     input.type = 'checkbox';
@@ -903,7 +927,6 @@ const addGeoJSONLayers = (map, popupClassName) => {
     label.setAttribute('for', wasteType);
     label.textContent = wasteType;
     wasteFilterGroup.appendChild(label);
-    input.addEventListener('change', updateWasteFilter);
   }
   geojsonFiles.forEach(async file => {
     const dataUrl = `/wordpress/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`;
@@ -925,6 +948,16 @@ const addGeoJSONLayers = (map, popupClassName) => {
       }
     });
 
+    // Change the cursor to a pointer when the mouse is over the places layer.
+    map.on('mouseenter', layerId, () => {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', layerId, () => {
+      map.getCanvas().style.cursor = '';
+    });
+
     // Ajoutez un événement click pour afficher un Popup
     map.on('click', layerId, e => {
       const coordinates = e.features[0].geometry.coordinates.slice();
@@ -938,10 +971,6 @@ const addGeoJSONLayers = (map, popupClassName) => {
       }), popupNode);
       new (mapbox_gl__WEBPACK_IMPORTED_MODULE_3___default().Popup)().setLngLat(coordinates).setDOMContent(popupNode).addTo(map);
     });
-    const updateLayerFilter = () => {
-      const checkedSymbols = [...document.getElementsByTagName('input')].filter(el => el.checked).map(el => el.id);
-      map.setFilter(layerId, ['in', 'icon', ...checkedSymbols]);
-    };
     const symbols = [];
     for (const feature of data.features) {
       const symbol = feature.properties.icon;
@@ -957,8 +986,11 @@ const addGeoJSONLayers = (map, popupClassName) => {
       label.setAttribute('for', symbol);
       label.textContent = symbol;
       filterGroup.appendChild(label);
-      input.addEventListener('change', updateLayerFilter);
     }
+    // Update both filters when any checkbox is changed
+    document.querySelectorAll('input[type="checkbox"]').forEach(input => {
+      input.addEventListener('change', applyCombinedFilters);
+    });
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addGeoJSONLayers);

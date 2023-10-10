@@ -11,6 +11,21 @@
 	  oioioioi
 	**/
 
+	#reset-filters {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		z-index: 1;
+		background-color: #3386c0;
+		color: #fff;
+		border: none;
+		border-radius: 3px;
+		padding: 10px;
+		cursor: pointer;
+		font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+		font-weight: 600;
+	}
+
 	.filter-group,
 	.waste-filter-group {
 		font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
