@@ -199,65 +199,6 @@ const fetchDataAndInitializeMap = async (mapContainer, lat, lng, zoom) => {
 
 /***/ }),
 
-/***/ "./src/components/FilterControls/FilterControls.js":
-/*!*********************************************************!*\
-  !*** ./src/components/FilterControls/FilterControls.js ***!
-  \*********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-
-
-const FilterControls = ({
-  categories,
-  updateMapLayers
-}) => {
-  const [checkedCategories, setCheckedCategories] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(() => {
-    const initialChecked = {};
-    if (categories) {
-      categories.forEach(category => {
-        initialChecked[category] = true;
-      });
-    }
-    return initialChecked;
-  });
-  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
-    updateMapLayers(checkedCategories);
-  }, [checkedCategories, updateMapLayers]);
-  const handleCheckboxChange = event => {
-    const {
-      name,
-      checked
-    } = event.target;
-    setCheckedCategories(prevState => ({
-      ...prevState,
-      [name]: checked
-    }));
-  };
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("fieldset", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("nav", {
-    id: "filter-group",
-    className: "filter-group"
-  }, categories && categories.map((category, index) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
-    key: index
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
-    type: "checkbox",
-    name: category,
-    checked: checkedCategories[category],
-    onChange: handleCheckboxChange
-  }), category))));
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FilterControls);
-
-/***/ }),
-
 /***/ "./src/components/Popup/BoxInformations/BoxContact/BoxAddress/BoxAddress.js":
 /*!**********************************************************************************!*\
   !*** ./src/components/Popup/BoxInformations/BoxContact/BoxAddress/BoxAddress.js ***!
@@ -768,50 +709,6 @@ _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_0___default()(() => {
 
 /***/ }),
 
-/***/ "./src/map/addFilterControls.js":
-/*!**************************************!*\
-  !*** ./src/map/addFilterControls.js ***!
-  \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "react-dom");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! mapbox-gl */ "./node_modules/mapbox-gl/dist/mapbox-gl.js");
-/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(mapbox_gl__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_FilterControls_FilterControls__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/FilterControls/FilterControls */ "./src/components/FilterControls/FilterControls.js");
-
-
-
-
-const addFilterControls = (map, categories, updateMapLayers) => {
-  if (!(map instanceof (mapbox_gl__WEBPACK_IMPORTED_MODULE_2___default().Map))) {
-    console.error('Invalid map instance passed to addFilterControls');
-    return;
-  }
-  const oldFilterControls = document.getElementById('map-filter-controls');
-  if (oldFilterControls) {
-    oldFilterControls.remove();
-  }
-  const filterControls = document.createElement('div');
-  filterControls.id = 'map-filter-controls';
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default().render((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_FilterControls_FilterControls__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    categories: categories,
-    updateMapLayers: updateMapLayers
-  }), filterControls);
-  const mapContainer = map.getContainer();
-  mapContainer.appendChild(filterControls);
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addFilterControls);
-
-/***/ }),
-
 /***/ "./src/map/controls.js":
 /*!*****************************!*\
   !*** ./src/map/controls.js ***!
@@ -844,6 +741,32 @@ const addControls = map => {
 
 /***/ }),
 
+/***/ "./src/map/filters.js":
+/*!****************************!*\
+  !*** ./src/map/filters.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   applyCombinedFilters: () => (/* binding */ applyCombinedFilters)
+/* harmony export */ });
+// Function to apply combined filters on map layers
+const applyCombinedFilters = (map, geojsonFiles) => {
+  const checkedWastes = [...document.querySelectorAll('#waste-filter-group input')].filter(el => el.checked).map(el => el.id);
+  const checkedSymbols = [...document.querySelectorAll('#filter-group input')].filter(el => el.checked).map(el => el.id);
+  geojsonFiles.forEach(file => {
+    const layerId = `${file}-unclustered-point`;
+    const wasteFilterConditions = ['all', ...checkedWastes.map(wasteType => ['==', wasteType, true])];
+    const symbolFilterConditions = ['in', 'icon', ...checkedSymbols];
+    const combinedFilterConditions = ['all', wasteFilterConditions, symbolFilterConditions];
+    map.setFilter(layerId, combinedFilterConditions);
+  });
+};
+
+/***/ }),
+
 /***/ "./src/map/geoJSONLayers.js":
 /*!**********************************!*\
   !*** ./src/map/geoJSONLayers.js ***!
@@ -861,10 +784,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
 /* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! mapbox-gl */ "./node_modules/mapbox-gl/dist/mapbox-gl.js");
 /* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(mapbox_gl__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_Popup_Popup__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Popup/Popup */ "./src/components/Popup/Popup.js");
+/* harmony import */ var _utils_getLabelForSymbol__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/getLabelForSymbol */ "./src/utils/getLabelForSymbol.js");
+/* harmony import */ var _utils_createAndAppendElement__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/createAndAppendElement */ "./src/utils/createAndAppendElement.js");
+/* harmony import */ var _map_filters__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../map/filters */ "./src/map/filters.js");
+/* harmony import */ var _map_resetFilters__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../map/resetFilters */ "./src/map/resetFilters.js");
+/* harmony import */ var _components_Popup_Popup__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Popup/Popup */ "./src/components/Popup/Popup.js");
 
 
 
@@ -872,90 +799,83 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// Function to get the corresponding label for a given symbol
-const getLabelForSymbol = symbol => {
-  switch (symbol) {
-    case 'private-marker':
-      return 'Établissements Privés';
-    case 'public-marker':
-      return 'Déchèteries Publiques';
-    case 'association-marker':
-      return 'Ressourceries & Associations';
-    default:
-      return symbol;
-  }
-};
 
-// Function to create and append a DOM element
-const createAndAppendElement = (type, attributes, parent) => {
-  const element = document.createElement(type);
-  Object.keys(attributes).forEach(key => {
-    element[key] = attributes[key];
-  });
-  parent.appendChild(element);
-  return element;
-};
 
-// Function to apply combined filters on map layers
-const applyCombinedFilters = (map, geojsonFiles) => {
-  const checkedWastes = [...document.querySelectorAll('#waste-filter-group input')].filter(el => el.checked).map(el => el.id);
-  const checkedSymbols = [...document.querySelectorAll('#filter-group input')].filter(el => el.checked).map(el => el.id);
-  geojsonFiles.forEach(file => {
-    const layerId = `${file}-unclustered-point`;
-    const wasteFilterConditions = ['all', ...checkedWastes.map(wasteType => ['==', wasteType, true])];
-    const symbolFilterConditions = ['in', 'icon', ...checkedSymbols];
-    const combinedFilterConditions = ['all', wasteFilterConditions, symbolFilterConditions];
-    map.setFilter(layerId, combinedFilterConditions);
-  });
-};
 
-// Function to reset all filters
-const resetFilters = (map, geojsonFiles) => {
-  // Reset waste type filters
-  document.querySelectorAll('#waste-filter-group input').forEach(input => {
-    input.checked = false;
-  });
-
-  // Reset category filters
-  document.querySelectorAll('#filter-group input').forEach(input => {
-    input.checked = true;
-  });
-
-  // Apply filters to update the map
-  applyCombinedFilters(map, geojsonFiles);
-};
 
 // Main function to add GeoJSON layers
 const addGeoJSONLayers = map => {
   const geojsonFiles = ['privateLandfill', 'publicLandfill', 'secondhandAssociation'];
   const wasteTypes = ['Amiante', 'Bois', 'Cartons', 'DEEE', 'Encombrants', 'Gravats', 'Huiles', 'Metaux', 'Pneus', 'Vegetaux', 'Verre'];
 
-  // Create and append filter groups and reset button
-  const filterGroup = createAndAppendElement('nav', {
-    id: 'filter-group',
-    className: 'filter-group'
+  // Create and append filters block
+  const filtersBlock = (0,_utils_createAndAppendElement__WEBPACK_IMPORTED_MODULE_5__.createAndAppendElement)('div', {
+    className: 'filters-block'
   }, document.getElementsByClassName('map-container')[0]);
-  const wasteFilterGroup = createAndAppendElement('nav', {
-    id: 'waste-filter-group',
-    className: 'waste-filter-group'
-  }, document.getElementsByClassName('map-container')[0]);
-  const resetButton = createAndAppendElement('button', {
-    id: 'reset-filters',
-    className: 'reset-filters',
-    textContent: 'Reset Filters'
+  const filtersTab = (0,_utils_createAndAppendElement__WEBPACK_IMPORTED_MODULE_5__.createAndAppendElement)('div', {
+    className: 'filters-tab'
   }, document.getElementsByClassName('map-container')[0]);
 
+  // Create and append filter groups
+
+  const filterGroup = (0,_utils_createAndAppendElement__WEBPACK_IMPORTED_MODULE_5__.createAndAppendElement)('nav', {
+    id: 'filter-group',
+    className: 'filter-group'
+  }, filtersBlock);
+  const filterGroupTitle = (0,_utils_createAndAppendElement__WEBPACK_IMPORTED_MODULE_5__.createAndAppendElement)('h5', {
+    className: 'filter-group-title',
+    textContent: 'Filtrer par Catégories'
+  }, filterGroup);
+  filterGroup.appendChild(filterGroupTitle);
+  const wasteFilterGroup = (0,_utils_createAndAppendElement__WEBPACK_IMPORTED_MODULE_5__.createAndAppendElement)('nav', {
+    id: 'waste-filter-group',
+    className: 'waste-filter-group'
+  }, filtersBlock);
+  const wasteFilterGroupTitle = (0,_utils_createAndAppendElement__WEBPACK_IMPORTED_MODULE_5__.createAndAppendElement)('h5', {
+    className: 'filter-group-title',
+    textContent: 'Filtrer par Déchets'
+  }, wasteFilterGroup);
+  wasteFilterGroup.appendChild(wasteFilterGroupTitle);
+  const resetButton = (0,_utils_createAndAppendElement__WEBPACK_IMPORTED_MODULE_5__.createAndAppendElement)('button', {
+    id: 'reset-filters',
+    className: 'reset-filters',
+    textContent: 'Réinitialiser Filtres'
+  }, filtersBlock);
+  const toggleFilterDrawer = () => {
+    const filtersBlock = document.querySelector('.filters-block');
+    if (filtersBlock.classList.contains('open')) {
+      filtersBlock.classList.remove('open');
+    } else {
+      filtersBlock.classList.add('open');
+    }
+  };
+  filtersTab.addEventListener('click', toggleFilterDrawer);
+  const adjustFilterBlockHeight = () => {
+    const canvasHeight = document.querySelector('.map-container canvas').offsetHeight;
+    const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const offset = rootFontSize * 2; // 2rem
+    const maxHeight = canvasHeight - offset;
+    document.querySelector('.filters-block').style.maxHeight = `${maxHeight}px`;
+  };
+  adjustFilterBlockHeight();
+
+  // Adjust the height when the window is resized
+  window.addEventListener('resize', adjustFilterBlockHeight);
+
+  // Adjust the height when the map is fullscreened
+  document.addEventListener('fullscreenchange', adjustFilterBlockHeight);
+
   // Add event listener to reset button
-  resetButton.addEventListener('click', () => resetFilters(map, geojsonFiles));
+  resetButton.addEventListener('click', () => (0,_map_resetFilters__WEBPACK_IMPORTED_MODULE_7__.resetFilters)(map, geojsonFiles));
 
   // Create waste type checkboxes
   wasteTypes.forEach(wasteType => {
-    createAndAppendElement('input', {
+    (0,_utils_createAndAppendElement__WEBPACK_IMPORTED_MODULE_5__.createAndAppendElement)('input', {
       type: 'checkbox',
       id: wasteType,
       checked: false
     }, wasteFilterGroup);
-    createAndAppendElement('label', {
+    (0,_utils_createAndAppendElement__WEBPACK_IMPORTED_MODULE_5__.createAndAppendElement)('label', {
       htmlFor: wasteType,
       textContent: wasteType
     }, wasteFilterGroup);
@@ -966,7 +886,7 @@ const addGeoJSONLayers = map => {
     const dataUrl = `/wordpress/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`;
     const {
       data
-    } = await axios__WEBPACK_IMPORTED_MODULE_5__["default"].get(dataUrl);
+    } = await axios__WEBPACK_IMPORTED_MODULE_9__["default"].get(dataUrl);
 
     // Add source and layer to the map
     map.addSource(file, {
@@ -997,10 +917,10 @@ const addGeoJSONLayers = map => {
     map.on('click', layerId, e => {
       const coordinates = e.features[0].geometry.coordinates.slice();
       const properties = e.features[0].properties;
-      const popupNode = createAndAppendElement('div', {
+      const popupNode = (0,_utils_createAndAppendElement__WEBPACK_IMPORTED_MODULE_5__.createAndAppendElement)('div', {
         className: `popup_${file}`
       }, document.body);
-      react_dom__WEBPACK_IMPORTED_MODULE_1___default().render((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Popup_Popup__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      react_dom__WEBPACK_IMPORTED_MODULE_1___default().render((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Popup_Popup__WEBPACK_IMPORTED_MODULE_8__["default"], {
         landfill: {
           properties
         }
@@ -1011,20 +931,23 @@ const addGeoJSONLayers = map => {
     // Create category checkboxes
     const uniqueSymbols = [...new Set(data.features.map(feature => feature.properties.icon))];
     uniqueSymbols.forEach(symbol => {
-      createAndAppendElement('input', {
+      (0,_utils_createAndAppendElement__WEBPACK_IMPORTED_MODULE_5__.createAndAppendElement)('input', {
         type: 'checkbox',
         id: symbol,
         checked: true
       }, filterGroup);
-      createAndAppendElement('label', {
-        htmlFor: symbol,
-        textContent: getLabelForSymbol(symbol)
+      const label = (0,_utils_createAndAppendElement__WEBPACK_IMPORTED_MODULE_5__.createAndAppendElement)('label', {
+        htmlFor: symbol
       }, filterGroup);
+      (0,_utils_createAndAppendElement__WEBPACK_IMPORTED_MODULE_5__.createAndAppendElement)('span', {
+        className: `marker-icon ${symbol}`
+      }, label);
+      label.appendChild(document.createTextNode((0,_utils_getLabelForSymbol__WEBPACK_IMPORTED_MODULE_4__.getLabelForSymbol)(symbol)));
     });
 
     // Add change event to all checkboxes
     document.querySelectorAll('input[type="checkbox"]').forEach(input => {
-      input.addEventListener('change', () => applyCombinedFilters(map, geojsonFiles));
+      input.addEventListener('change', () => (0,_map_filters__WEBPACK_IMPORTED_MODULE_6__.applyCombinedFilters)(map, geojsonFiles));
     });
   });
 };
@@ -1047,10 +970,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mapbox_gl__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _controls__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./controls */ "./src/map/controls.js");
 /* harmony import */ var _geoJSONLayers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./geoJSONLayers */ "./src/map/geoJSONLayers.js");
-/* harmony import */ var _markers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./markers */ "./src/map/markers.js");
-/* harmony import */ var _addFilterControls__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./addFilterControls */ "./src/map/addFilterControls.js");
-
-
 
 
 
@@ -1071,56 +990,85 @@ const initializeMap = (mapContainer, lat, lng, zoom, accessToken) => {
 
 /***/ }),
 
-/***/ "./src/map/markers.js":
-/*!****************************!*\
-  !*** ./src/map/markers.js ***!
-  \****************************/
+/***/ "./src/map/resetFilters.js":
+/*!*********************************!*\
+  !*** ./src/map/resetFilters.js ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   resetFilters: () => (/* binding */ resetFilters)
 /* harmony export */ });
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "react-dom");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! mapbox-gl */ "./node_modules/mapbox-gl/dist/mapbox-gl.js");
-/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(mapbox_gl__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_Popup_Popup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Popup/Popup */ "./src/components/Popup/Popup.js");
+/* harmony import */ var _filters__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./filters */ "./src/map/filters.js");
 
 
-
-
-const addedMarkers = new Map();
-const addLandfillMarkers = (landfills, popupClassName, map) => {
-  landfills.forEach(({
-    geometry,
-    properties
-  }) => {
-    const {
-      id,
-      categorie
-    } = properties;
-    if (!addedMarkers.has(id)) {
-      const popupNode = document.createElement('div');
-      popupNode.className = popupClassName;
-      react_dom__WEBPACK_IMPORTED_MODULE_1___default().render((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Popup_Popup__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        landfill: {
-          geometry,
-          properties
-        }
-      }), popupNode);
-      const marker = new (mapbox_gl__WEBPACK_IMPORTED_MODULE_2___default().Marker)().setLngLat(geometry.coordinates).setPopup(new (mapbox_gl__WEBPACK_IMPORTED_MODULE_2___default().Popup)().setDOMContent(popupNode)).addTo(map);
-      if (categorie) {
-        marker.getElement().classList.add(`marker-${categorie}`);
-      }
-      addedMarkers.set(id, marker);
-    }
+// Function to reset all filters
+const resetFilters = (map, geojsonFiles) => {
+  // Reset waste type filters
+  document.querySelectorAll('#waste-filter-group input').forEach(input => {
+    input.checked = false;
   });
+
+  // Reset category filters
+  document.querySelectorAll('#filter-group input').forEach(input => {
+    input.checked = true;
+  });
+
+  // Apply filters to update the map
+  (0,_filters__WEBPACK_IMPORTED_MODULE_0__.applyCombinedFilters)(map, geojsonFiles);
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addLandfillMarkers);
+
+/***/ }),
+
+/***/ "./src/utils/createAndAppendElement.js":
+/*!*********************************************!*\
+  !*** ./src/utils/createAndAppendElement.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   createAndAppendElement: () => (/* binding */ createAndAppendElement)
+/* harmony export */ });
+// Function to create and append a DOM element
+const createAndAppendElement = (type, attributes, parent) => {
+  const element = document.createElement(type);
+  Object.keys(attributes).forEach(key => {
+    element[key] = attributes[key];
+  });
+  parent.appendChild(element);
+  return element;
+};
+
+/***/ }),
+
+/***/ "./src/utils/getLabelForSymbol.js":
+/*!****************************************!*\
+  !*** ./src/utils/getLabelForSymbol.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getLabelForSymbol: () => (/* binding */ getLabelForSymbol)
+/* harmony export */ });
+// Function to get the corresponding label for a given symbol
+const getLabelForSymbol = symbol => {
+  switch (symbol) {
+    case 'private-marker':
+      return 'Établissements Privés';
+    case 'public-marker':
+      return 'Déchèteries Publiques';
+    case 'association-marker':
+      return 'Ressourceries & Associations';
+    default:
+      return symbol;
+  }
+};
 
 /***/ }),
 

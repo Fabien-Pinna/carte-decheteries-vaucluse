@@ -2,81 +2,56 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import axios from 'axios';
 import mapboxgl from 'mapbox-gl';
+import { getLabelForSymbol } from '../utils/getLabelForSymbol';
+import { createAndAppendElement } from '../utils/createAndAppendElement';
+import { applyCombinedFilters } from '../map/filters';
+import { resetFilters } from '../map/resetFilters';
 import Popup from '../components/Popup/Popup';
-
-// Function to get the corresponding label for a given symbol
-const getLabelForSymbol = (symbol) => {
-    switch (symbol) {
-        case 'private-marker':
-            return 'Établissements Privés';
-        case 'public-marker':
-            return 'Déchèteries Publiques';
-        case 'association-marker':
-            return 'Ressourceries & Associations';
-        default:
-            return symbol;
-    }
-};
-
-// Function to create and append a DOM element
-const createAndAppendElement = (type, attributes, parent) => {
-    const element = document.createElement(type);
-    Object.keys(attributes).forEach((key) => {
-        element[key] = attributes[key];
-    });
-    parent.appendChild(element);
-    return element;
-};
-
-// Function to apply combined filters on map layers
-const applyCombinedFilters = (map, geojsonFiles) => {
-    const checkedWastes = [...document.querySelectorAll('#waste-filter-group input')]
-        .filter((el) => el.checked)
-        .map((el) => el.id);
-
-    const checkedSymbols = [...document.querySelectorAll('#filter-group input')]
-        .filter((el) => el.checked)
-        .map((el) => el.id);
-
-    geojsonFiles.forEach((file) => {
-        const layerId = `${file}-unclustered-point`;
-        const wasteFilterConditions = ['all', ...checkedWastes.map((wasteType) => ['==', wasteType, true])];
-        const symbolFilterConditions = ['in', 'icon', ...checkedSymbols];
-        const combinedFilterConditions = ['all', wasteFilterConditions, symbolFilterConditions];
-        map.setFilter(layerId, combinedFilterConditions);
-    });
-};
-
-// Function to reset all filters
-const resetFilters = (map, geojsonFiles) => {
-    // Reset waste type filters
-    document.querySelectorAll('#waste-filter-group input').forEach((input) => {
-        input.checked = false;
-    });
-
-    // Reset category filters
-    document.querySelectorAll('#filter-group input').forEach((input) => {
-        input.checked = true;
-    });
-
-    // Apply filters to update the map
-    applyCombinedFilters(map, geojsonFiles);
-};
 
 // Main function to add GeoJSON layers
 const addGeoJSONLayers = (map) => {
     const geojsonFiles = ['privateLandfill', 'publicLandfill', 'secondhandAssociation'];
     const wasteTypes = ['Amiante', 'Bois', 'Cartons', 'DEEE', 'Encombrants', 'Gravats', 'Huiles', 'Metaux', 'Pneus', 'Vegetaux', 'Verre'];
 
-    // Create and append filter groups and reset button
+    // Create and append filters block
+    const filtersBlock = createAndAppendElement(
+        'div',
+        {
+            className: 'filters-block'
+        },
+        document.getElementsByClassName('map-container')[0]
+    );
+
+    const filtersTab = createAndAppendElement(
+        'div',
+        {
+            className: 'filters-tab'
+        },
+        document.getElementsByClassName('map-container')[0]
+    );
+
+    // Create and append filter groups
+
     const filterGroup = createAndAppendElement(
         'nav',
         {
             id: 'filter-group',
             className: 'filter-group'
         },
-        document.getElementsByClassName('map-container')[0]
+        filtersBlock
     );
+
+    const filterGroupTitle = createAndAppendElement(
+        'h5',
+        {
+            className: 'filter-group-title',
+            textContent: 'Filtrer par Catégories'
+        },
+        filterGroup
+    );
+    filterGroup.appendChild(filterGroupTitle);
+
+
     const wasteFilterGroup = createAndAppendElement(
         'nav',
         {
@@ -84,16 +59,55 @@ const addGeoJSONLayers = (map) => {
             className:
                 'waste-filter-group'
         },
-        document.getElementsByClassName('map-container')[0]
+        filtersBlock
     );
+
+    const wasteFilterGroupTitle = createAndAppendElement(
+        'h5',
+        {
+            className: 'filter-group-title',
+            textContent: 'Filtrer par Déchets'
+        },
+        wasteFilterGroup
+    );
+    wasteFilterGroup.appendChild(wasteFilterGroupTitle);
+
     const resetButton = createAndAppendElement(
         'button',
         {
             id: 'reset-filters',
             className: 'reset-filters',
-            textContent: 'Reset Filters'
+            textContent: 'Réinitialiser Filtres'
         },
-        document.getElementsByClassName('map-container')[0]);
+        filtersBlock
+    );
+
+    const toggleFilterDrawer = () => {
+        const filtersBlock = document.querySelector('.filters-block');
+        if (filtersBlock.classList.contains('open')) {
+            filtersBlock.classList.remove('open');
+        } else {
+            filtersBlock.classList.add('open');
+        }
+    };
+
+    filtersTab.addEventListener('click', toggleFilterDrawer);
+
+    const adjustFilterBlockHeight = () => {
+        const canvasHeight = document.querySelector('.map-container canvas').offsetHeight;
+        const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const offset = rootFontSize * 2; // 2rem
+        const maxHeight = canvasHeight - offset;
+        document.querySelector('.filters-block').style.maxHeight = `${maxHeight}px`;
+    };
+
+    adjustFilterBlockHeight();
+
+    // Adjust the height when the window is resized
+    window.addEventListener('resize', adjustFilterBlockHeight);
+
+    // Adjust the height when the map is fullscreened
+    document.addEventListener('fullscreenchange', adjustFilterBlockHeight);
 
     // Add event listener to reset button
     resetButton.addEventListener('click', () => resetFilters(map, geojsonFiles))
@@ -170,14 +184,23 @@ const addGeoJSONLayers = (map) => {
                 },
                 filterGroup
             );
-            createAndAppendElement(
+            const label = createAndAppendElement(
                 'label',
                 {
                     htmlFor: symbol,
-                    textContent: getLabelForSymbol(symbol)
+
                 },
                 filterGroup
             );
+            createAndAppendElement(
+                'span',
+                {
+                    className: `marker-icon ${symbol}`,
+                },
+                label
+            );
+            label.appendChild(document.createTextNode(getLabelForSymbol(symbol)));
+
         });
 
         // Add change event to all checkboxes

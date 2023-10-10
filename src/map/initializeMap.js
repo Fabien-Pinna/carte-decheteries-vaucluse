@@ -1,8 +1,6 @@
 import mapboxgl from 'mapbox-gl';
 import addControls from './controls';
 import addGeoJSONLayers from './geoJSONLayers';
-import addLandfillMarkers from './markers';
-import addFilterControls from './addFilterControls';
 
 const initializeMap = (mapContainer, lat, lng, zoom, accessToken) => {
     mapboxgl.accessToken = accessToken;
