@@ -1,7 +1,7 @@
+import ReactDOM from 'react-dom';
+import { useBlockProps } from '@wordpress/block-editor';
 import { useState, useRef, useEffect } from '@wordpress/element';
 import mapboxgl from 'mapbox-gl';
-import { useBlockProps } from '@wordpress/block-editor';
-import ReactDOM from 'react-dom';
 import Popup from './components/Popup/Popup';
 
 import './editor.scss';

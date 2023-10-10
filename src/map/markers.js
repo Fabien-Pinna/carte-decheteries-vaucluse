@@ -1,29 +1,32 @@
 import ReactDOM from 'react-dom';
 import mapboxgl from 'mapbox-gl';
-import Popup from '../components/Popup/Popup'
+import Popup from '../components/Popup/Popup';
 
-const addedMarkers = {};
+const addedMarkers = new Map();
 
 const addLandfillMarkers = (landfills, popupClassName, map) => {
-    landfills.forEach((landfill) => {
-        const key = landfill.properties.id;
+    landfills.forEach(({ geometry, properties }) => {
 
-        if (!addedMarkers[key]) {
+        const { id, categorie } = properties;
+
+        if (!addedMarkers.has(id)) {
             const popupNode = document.createElement('div');
             popupNode.className = popupClassName;
-            ReactDOM.render(<Popup landfill={landfill} />, popupNode);
+
+            ReactDOM.render(<Popup landfill={{ geometry, properties }} />, popupNode);
+
             const marker = new mapboxgl.Marker()
-                .setLngLat(landfill.geometry.coordinates)
+                .setLngLat(geometry.coordinates)
                 .setPopup(new mapboxgl.Popup().setDOMContent(popupNode))
                 .addTo(map);
 
-            if (landfill.properties.categorie) {
-                marker.getElement().classList.add(`marker-${landfill.properties.categorie}`);
+            if (categorie) {
+                marker.getElement().classList.add(`marker-${categorie}`);
             }
 
-            addedMarkers[key] = marker;
+            addedMarkers.set(id, marker);
         }
     });
-}
+};
 
 export default addLandfillMarkers;

@@ -645,12 +645,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mapbox-gl */ "./node_modules/mapbox-gl/dist/mapbox-gl.js");
-/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(mapbox_gl__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "react-dom");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-dom */ "react-dom");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! mapbox-gl */ "./node_modules/mapbox-gl/dist/mapbox-gl.js");
+/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(mapbox_gl__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_Popup_Popup__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Popup/Popup */ "./src/components/Popup/Popup.js");
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
 
@@ -686,11 +686,11 @@ function Edit(props) {
   }, []);
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     if (mapboxAccessToken) {
-      (mapbox_gl__WEBPACK_IMPORTED_MODULE_1___default().accessToken) = mapboxAccessToken;
+      (mapbox_gl__WEBPACK_IMPORTED_MODULE_3___default().accessToken) = mapboxAccessToken;
 
       // initialize map only once
       if (map.current) return;
-      map.current = new (mapbox_gl__WEBPACK_IMPORTED_MODULE_1___default().Map)({
+      map.current = new (mapbox_gl__WEBPACK_IMPORTED_MODULE_3___default().Map)({
         container: mapContainer.current,
         style: 'mapbox://styles/fabioloco/clgqlk3z700ji01qza607558j',
         center: [lng, lat],
@@ -698,11 +698,11 @@ function Edit(props) {
       });
 
       // Add fullscreen control
-      const fullscreenControl = new (mapbox_gl__WEBPACK_IMPORTED_MODULE_1___default().FullscreenControl)();
+      const fullscreenControl = new (mapbox_gl__WEBPACK_IMPORTED_MODULE_3___default().FullscreenControl)();
       map.current.addControl(fullscreenControl, "bottom-right");
 
       // Add geolocate control
-      geolocateControl.current = new (mapbox_gl__WEBPACK_IMPORTED_MODULE_1___default().GeolocateControl)({
+      geolocateControl.current = new (mapbox_gl__WEBPACK_IMPORTED_MODULE_3___default().GeolocateControl)({
         positionOptions: {
           enableHighAccuracy: true
         },
@@ -748,10 +748,10 @@ function Edit(props) {
       if (!addedMarkers.current[key]) {
         const popupNode = document.createElement('div');
         popupNode.className = popupClassName;
-        react_dom__WEBPACK_IMPORTED_MODULE_3___default().render((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Popup_Popup__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        react_dom__WEBPACK_IMPORTED_MODULE_1___default().render((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Popup_Popup__WEBPACK_IMPORTED_MODULE_4__["default"], {
           landfill: landfill
         }), popupNode);
-        const marker = new (mapbox_gl__WEBPACK_IMPORTED_MODULE_1___default().Marker)().setLngLat(landfill.geometry.coordinates).setPopup(new (mapbox_gl__WEBPACK_IMPORTED_MODULE_1___default().Popup)().setDOMContent(popupNode)).addTo(map.current);
+        const marker = new (mapbox_gl__WEBPACK_IMPORTED_MODULE_3___default().Marker)().setLngLat(landfill.geometry.coordinates).setPopup(new (mapbox_gl__WEBPACK_IMPORTED_MODULE_3___default().Popup)().setDOMContent(popupNode)).addTo(map.current);
 
         // Add a class depending on the category of the landfill
         if (landfill.properties.categorie) {

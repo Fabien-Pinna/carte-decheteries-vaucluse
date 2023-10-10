@@ -12,7 +12,7 @@ const addControls = (map) => {
         },
         trackUserLocation: true,
     });
-    map.addControl(geolocateControl);
+    map.addControl(geolocateControl, 'bottom-right');
 }
 
 export default addControls

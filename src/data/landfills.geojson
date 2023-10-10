@@ -5,7 +5,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "01",
 				"color": "#006400",
 				"name": "Déchèterie de Valréas",
@@ -48,17 +47,6 @@
 				"hoursAfternoonSummer": [],
 				"hoursInformationSummer": "de Juillet à Août",
 				"hoursInformationWinter": "",
-				"Amiante": false,
-				"Bois": true,
-				"Cartons": true,
-				"DEEE": true,
-				"Encombrants": true,
-				"Gravats": true,
-				"Huiles": false,
-				"Metaux": false,
-				"Pneus": true,
-				"Vegetaux": true,
-				"Verre": false,
 				"authorizedWaste": [
 					"Bois",
 					"Cartons",
@@ -97,7 +85,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "02",
 				"color": "#006400",
 				"name": "Déchèterie de Bollène",
@@ -132,17 +119,6 @@
 				"hoursAfternoonSummer": [],
 				"hoursInformationSummer": "",
 				"hoursInformationWinter": "",
-				"Amiante": false,
-				"Bois": true,
-				"Cartons": true,
-				"DEEE": true,
-				"Encombrants": false,
-				"Gravats": true,
-				"Huiles": true,
-				"Metaux": true,
-				"Pneus": true,
-				"Vegetaux": true,
-				"Verre": false,
 				"authorizedWaste": [
 					"Accumulateurs",
 					"Appareils électroménagers",
@@ -172,7 +148,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "03",
 				"color": "#006400",
 				"name": "Déchèterie de Vaison-la-Romaine",
@@ -207,17 +182,6 @@
 				"hoursAfternoonSummer": [],
 				"hoursInformationSummer": "",
 				"hoursInformationWinter": "",
-				"Amiante": false,
-				"Bois": true,
-				"Cartons": true,
-				"DEEE": true,
-				"Encombrants": true,
-				"Gravats": true,
-				"Huiles": true,
-				"Metaux": true,
-				"Pneus": true,
-				"Vegetaux": true,
-				"Verre": false,
 				"authorizedWaste": [
 					"Ampoules / néons",
 					"Batteries",
@@ -252,7 +216,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "04",
 				"color": "#006400",
 				"name": "Déchèterie de Piolenc",
@@ -295,17 +258,6 @@
 				"hoursAfternoonSummer": ["X", "X", "X", "X", "X", "X", "X"],
 				"hoursInformationWinter": "d'Octobre à Mai",
 				"hoursInformationSummer": "de Juin à Septembre",
-				"Amiante": false,
-				"Bois": false,
-				"Cartons": true,
-				"DEEE": false,
-				"Encombrants": true,
-				"Gravats": true,
-				"Huiles": true,
-				"Metaux": true,
-				"Pneus": true,
-				"Vegetaux": true,
-				"Verre": true,
 				"authorizedWaste": [
 					"Accumulateurs",
 					"Batteries",
@@ -352,7 +304,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "05",
 				"color": "#006400",
 				"name": "Déchèterie de Camaret-sur-Aigues",
@@ -395,17 +346,6 @@
 				"hoursAfternoonSummer": ["X", "X", "X", "X", "X", "X", "X"],
 				"hoursInformationWinter": "d'Octobre à Mai",
 				"hoursInformationSummer": "de Juin à Septembre",
-				"Amiante": false,
-				"Bois": false,
-				"Cartons": true,
-				"DEEE": false,
-				"Encombrants": true,
-				"Gravats": true,
-				"Huiles": true,
-				"Metaux": true,
-				"Pneus": true,
-				"Vegetaux": true,
-				"Verre": true,
 				"authorizedWaste": [
 					"Accumulateurs",
 					"Batteries",
@@ -452,7 +392,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "06",
 				"color": "#006400",
 				"name": "Déchèterie Orange",
@@ -495,17 +434,6 @@
 				"hoursAfternoonSummer": [],
 				"hoursInformationWinter": "Du 1 septembre au 14 juin",
 				"hoursInformationSummer": "Du 15 juin au 31 août",
-				"Amiante": false,
-				"Bois": false,
-				"Cartons": false,
-				"DEEE": true,
-				"Encombrants": false,
-				"Gravats": false,
-				"Huiles": false,
-				"Metaux": false,
-				"Pneus": false,
-				"Vegetaux": true,
-				"Verre": true,
 				"authorizedWaste": [
 					"Batteries, piles et accumulateurs",
 					"Bois (palettes, caissettes, écorces panneaux et bois non traités)",
@@ -542,7 +470,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "07",
 				"color": "#006400",
 				"name": "Composterie",
@@ -577,17 +504,6 @@
 				"hoursAfternoonSummer": [],
 				"hoursInformationWinter": "",
 				"hoursInformationSummer": "",
-				"Amiante": false,
-				"Bois": false,
-				"Cartons": false,
-				"DEEE": false,
-				"Encombrants": false,
-				"Gravats": false,
-				"Huiles": false,
-				"Metaux": false,
-				"Pneus": false,
-				"Vegetaux": true,
-				"Verre": false,
 				"authorizedWaste": [
 					"Déchets verts (sauf ceux cités dans les déchets refusés)"
 				],
@@ -605,7 +521,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "08",
 				"color": "#006400",
 				"name": "Déchèterie de Sault",
@@ -624,17 +539,6 @@
 				"hoursAfternoonSummer": [],
 				"hoursInformationWinter": "",
 				"hoursInformationSummer": "",
-				"Amiante": false,
-				"Bois": true,
-				"Cartons": true,
-				"DEEE": true,
-				"Encombrants": true,
-				"Gravats": false,
-				"Huiles": false,
-				"Metaux": true,
-				"Pneus": true,
-				"Vegetaux": true,
-				"Verre": true,
 				"authorizedWaste": [
 					"Batteries",
 					"Bois",
@@ -660,7 +564,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "09",
 				"color": "#006400",
 				"name": "Déchèterie de Villes-sur-Auzon",
@@ -695,17 +598,6 @@
 				],
 				"hoursInformationWinter": "de janvier à mai et de septembre à décembre",
 				"hoursInformationSummer": "juin, juillet et août",
-				"Amiante": false,
-				"Bois": true,
-				"Cartons": false,
-				"DEEE": false,
-				"Encombrants": true,
-				"Gravats": true,
-				"Huiles": true,
-				"Metaux": true,
-				"Pneus": true,
-				"Vegetaux": true,
-				"Verre": false,
 				"authorizedWaste": [
 					"Batteries",
 					"Bois",
@@ -745,7 +637,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "10",
 				"color": "#006400",
 				"name": "Déchèterie de Sorgues",
@@ -796,17 +687,6 @@
 				],
 				"hoursInformationWinter": "15 octobre au 15 avril",
 				"hoursInformationSummer": "16 avril au 14 octobre",
-				"Amiante": false,
-				"Bois": true,
-				"Cartons": true,
-				"DEEE": true,
-				"Encombrants": true,
-				"Gravats": true,
-				"Huiles": true,
-				"Metaux": true,
-				"Pneus": false,
-				"Vegetaux": true,
-				"Verre": true,
 				"authorizedWaste": [
 					"Ampoules",
 					"Bois",
@@ -845,7 +725,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "11",
 				"color": "#006400",
 				"name": "Déchèterie de Pernes-les-Fontaines",
@@ -896,17 +775,6 @@
 				],
 				"hoursInformationWinter": "15 octobre au 15 avril",
 				"hoursInformationSummer": "16 avril au 14 octobre",
-				"Amiante": false,
-				"Bois": true,
-				"Cartons": true,
-				"DEEE": true,
-				"Encombrants": true,
-				"Gravats": true,
-				"Huiles": true,
-				"Metaux": true,
-				"Pneus": false,
-				"Vegetaux": true,
-				"Verre": true,
 				"authorizedWaste": [
 					"Ampoules",
 					"Bois",
@@ -945,7 +813,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "12",
 				"color": "#006400",
 				"name": "Déchèterie d'Entraigues-sur-la-Sorgue",
@@ -996,17 +863,6 @@
 				],
 				"hoursInformationWinter": "de novembre à mars",
 				"hoursInformationSummer": "d'avril à octobre",
-				"Amiante": false,
-				"Bois": true,
-				"Cartons": true,
-				"DEEE": true,
-				"Encombrants": true,
-				"Gravats": true,
-				"Huiles": true,
-				"Metaux": true,
-				"Pneus": false,
-				"Vegetaux": true,
-				"Verre": true,
 				"authorizedWaste": [
 					"Bois",
 					"Cartons / papiers",
@@ -1047,7 +903,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "13",
 				"color": "#006400",
 				"name": "Déchèterie de Vedène",
@@ -1098,17 +953,6 @@
 				],
 				"hoursInformationWinter": "de novembre à mars",
 				"hoursInformationSummer": "d'avril à octobre",
-				"Amiante": false,
-				"Bois": true,
-				"Cartons": true,
-				"DEEE": true,
-				"Encombrants": true,
-				"Gravats": true,
-				"Huiles": true,
-				"Metaux": true,
-				"Pneus": false,
-				"Vegetaux": true,
-				"Verre": true,
 				"authorizedWaste": [
 					"Bois",
 					"Cartons / papiers",
@@ -1149,7 +993,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "14",
 				"color": "#006400",
 				"name": "Déchèterie de Velleron",
@@ -1200,17 +1043,6 @@
 				],
 				"hoursInformationWinter": "de novembre à mars",
 				"hoursInformationSummer": "d'avril à octobre",
-				"Amiante": false,
-				"Bois": true,
-				"Cartons": true,
-				"DEEE": true,
-				"Encombrants": true,
-				"Gravats": true,
-				"Huiles": true,
-				"Metaux": true,
-				"Pneus": false,
-				"Vegetaux": true,
-				"Verre": true,
 				"authorizedWaste": [
 					"Bois",
 					"Cartons/Papiers",
@@ -1251,7 +1083,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "15",
 				"color": "#006400",
 				"name": "Déchèterie Courtine - Avignon",
@@ -1270,17 +1101,6 @@
 				"hoursAfternoonSummer": [],
 				"hoursInformationWinter": "",
 				"hoursInformationSummer": "",
-				"Amiante": false,
-				"Bois": true,
-				"Cartons": true,
-				"DEEE": true,
-				"Encombrants": true,
-				"Gravats": true,
-				"Huiles": true,
-				"Metaux": true,
-				"Pneus": false,
-				"Vegetaux": true,
-				"Verre": true,
 				"authorizedWaste": [
 					"Bois",
 					"Cartons / papiers",
@@ -1321,7 +1141,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "16",
 				"color": "#006400",
 				"name": "Déchèterie Montfavet - Avignon",
@@ -1372,17 +1191,6 @@
 				],
 				"hoursInformationWinter": "(de novembre à mars)",
 				"hoursInformationSummer": "(d'avril à octobre)",
-				"Amiante": false,
-				"Bois": true,
-				"Cartons": true,
-				"DEEE": true,
-				"Encombrants": true,
-				"Gravats": true,
-				"Huiles": true,
-				"Metaux": true,
-				"Pneus": false,
-				"Vegetaux": true,
-				"Verre": true,
 				"authorizedWaste": [
 					"Bois",
 					"Cartons / papiers",
@@ -1423,7 +1231,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "17",
 				"color": "#006400",
 				"name": "Déchèterie du Thor / Châteauneuf-de-Gadagne",
@@ -1458,17 +1265,6 @@
 				"hoursAfternoonSummer": [],
 				"hoursInformationWinter": "",
 				"hoursInformationSummer": "",
-				"Amiante": false,
-				"Bois": true,
-				"Cartons": true,
-				"DEEE": false,
-				"Encombrants": true,
-				"Gravats": true,
-				"Huiles": true,
-				"Metaux": true,
-				"Pneus": false,
-				"Vegetaux": true,
-				"Verre": true,
 				"authorizedWaste": [
 					"Batteries / piles / accumulateurs",
 					"Bouchons plastiques",
@@ -1517,7 +1313,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "18",
 				"color": "#006400",
 				"name": "Déchèterie de L'Isle-sur-la-Sorgue",
@@ -1552,17 +1347,6 @@
 				"hoursAfternoonSummer": [],
 				"hoursInformationWinter": "",
 				"hoursInformationSummer": "",
-				"Amiante": false,
-				"Bois": false,
-				"Cartons": true,
-				"DEEE": false,
-				"Encombrants": false,
-				"Gravats": true,
-				"Huiles": true,
-				"Metaux": true,
-				"Pneus": false,
-				"Vegetaux": true,
-				"Verre": true,
 				"authorizedWaste": [
 					"Batteries / piles / accumulateurs",
 					"Bouchons plastiques",
@@ -1611,7 +1395,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "19",
 				"color": "#006400",
 				"name": "Déchèterie de Coustellet",
@@ -1646,17 +1429,6 @@
 				"hoursAfternoonSummer": [],
 				"hoursInformationWinter": "",
 				"hoursInformationSummer": "",
-				"Amiante": false,
-				"Bois": true,
-				"Cartons": true,
-				"DEEE": true,
-				"Encombrants": false,
-				"Gravats": false,
-				"Huiles": true,
-				"Metaux": true,
-				"Pneus": false,
-				"Vegetaux": false,
-				"Verre": false,
 				"authorizedWaste": [
 					"Ampoules / néons",
 					"Batteries",
@@ -1707,7 +1479,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "20",
 				"color": "#006400",
 				"name": "Déchèterie de Lauris",
@@ -1734,17 +1505,6 @@
 				"hoursAfternoonSummer": [],
 				"hoursInformationWinter": "",
 				"hoursInformationSummer": "",
-				"Amiante": false,
-				"Bois": true,
-				"Cartons": false,
-				"DEEE": true,
-				"Encombrants": true,
-				"Gravats": false,
-				"Huiles": true,
-				"Metaux": true,
-				"Pneus": true,
-				"Vegetaux": false,
-				"Verre": true,
 				"authorizedWaste": [
 					"Bois",
 					"Cartouches d’encre",
@@ -1785,7 +1545,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "21",
 				"color": "#006400",
 				"name": "Déchèterie de Vaugines",
@@ -1820,17 +1579,6 @@
 				"hoursAfternoonSummer": [],
 				"hoursInformationWinter": "",
 				"hoursInformationSummer": "",
-				"Amiante": false,
-				"Bois": true,
-				"Cartons": false,
-				"DEEE": true,
-				"Encombrants": true,
-				"Gravats": true,
-				"Huiles": true,
-				"Metaux": true,
-				"Pneus": false,
-				"Vegetaux": false,
-				"Verre": true,
 				"authorizedWaste": [
 					"Bois",
 					"Cartouches d’encre",
@@ -1871,7 +1619,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "22",
 				"color": "#006400",
 				"name": "Déchèterie d'Apt",
@@ -1906,17 +1653,6 @@
 				"hoursAfternoonSummer": [],
 				"hoursInformationWinter": "",
 				"hoursInformationSummer": "",
-				"Amiante": false,
-				"Bois": true,
-				"Cartons": true,
-				"DEEE": true,
-				"Encombrants": true,
-				"Gravats": true,
-				"Huiles": true,
-				"Metaux": false,
-				"Pneus": true,
-				"Vegetaux": false,
-				"Verre": true,
 				"authorizedWaste": [
 					"Batteries",
 					"Bois traité",
@@ -1963,7 +1699,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "23",
 				"color": "#006400",
 				"name": "Déchèterie de Viens",
@@ -1990,17 +1725,6 @@
 				"hoursAfternoonSummer": [],
 				"hoursInformationWinter": "",
 				"hoursInformationSummer": "",
-				"Amiante": false,
-				"Bois": true,
-				"Cartons": true,
-				"DEEE": true,
-				"Encombrants": true,
-				"Gravats": true,
-				"Huiles": false,
-				"Metaux": false,
-				"Pneus": true,
-				"Vegetaux": true,
-				"Verre": true,
 				"authorizedWaste": [
 					"Bois",
 					"Batteries",
@@ -2038,7 +1762,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "24",
 				"color": "#006400",
 				"name": "Pôle Environnement et valorisation intercommunal",
@@ -2089,17 +1812,6 @@
 				],
 				"hoursInformationWinter": "De fin octobre à fin mars",
 				"hoursInformationSummer": "De fin mars à fin octobre",
-				"Amiante": false,
-				"Bois": true,
-				"Cartons": true,
-				"DEEE": true,
-				"Encombrants": true,
-				"Gravats": true,
-				"Huiles": true,
-				"Metaux": false,
-				"Pneus": false,
-				"Vegetaux": false,
-				"Verre": true,
 				"authorizedWaste": [
 					"Bâches et films plastiques",
 					"Batteries",
@@ -2137,7 +1849,6 @@
 			"type": "Feature",
 			"properties": {
 				"categorie": "publicLandfill",
-				"icon": "public-marker",
 				"id": "25",
 				"color": "#006400",
 				"name": "Déchèterie de Pertuis",
@@ -2172,17 +1883,6 @@
 				"hoursAfternoonSummer": [],
 				"hoursInformationWinter": "",
 				"hoursInformationSummer": "",
-				"Amiante": true,
-				"Bois": true,
-				"Cartons": true,
-				"DEEE": true,
-				"Encombrants": false,
-				"Gravats": true,
-				"Huiles": true,
-				"Metaux": true,
-				"Pneus": false,
-				"Vegetaux": false,
-				"Verre": false,
 				"authorizedWaste": [
 					"Amiante ciment sur rendez-vous",
 					"Ampoules",
@@ -2211,6 +1911,1581 @@
 			"geometry": {
 				"type": "Point",
 				"coordinates": [5.4816815104337335, 43.67586798512442]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "101",
+				"color": "#1c62e2",
+				"name": "Centre de valorisation ALCYON",
+				"address": "Z.I du Sactar, Quartier Blondel hydroélectrique",
+				"city": "84500 BOLLENE",
+				"phoneData": "tel:+33490344036",
+				"phoneData2": "",
+				"phoneClient": "04 90 34 40 36",
+				"phoneClient2": "",
+				"website": "https://cvalcyon.com",
+				"email": "",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": [
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"X",
+					"X"
+				],
+				"hoursAfternoon": [
+					"14h-17h",
+					"14h-17h",
+					"14h-17h",
+					"14h-17h",
+					"14h-17h",
+					"X",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"Accumulateurs",
+					"Aérosols",
+					"Batteries",
+					"Bois (traité ou non) / palettes",
+					"Cartons / papier",
+					"Cartouches (toxiques ou non)",
+					"DEEE",
+					"Déchets non dangereux mélangés",
+					"Déchets de peintures (toxiques ou non)",
+					"Déchets verts",
+					"Emballages bois",
+					"Emballages souillés",
+					"Huiles usagées",
+					"Moquettes",
+					"Plastiques",
+					"Pneus",
+					"Polystyrène",
+					"PVC",
+					"Solvants",
+					"Terre végétale",
+					"Textiles"
+				],
+				"forbiddenWaste": ["Déchets non cités"]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [4.736572762643985, 44.30486698709596]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "102",
+				"color": "#1c62e2",
+				"name": "Terre durable Bollène",
+				"address": "Z.I La croisière",
+				"city": "84500 BOLLENE",
+				"phoneData": "tel:+33490297081",
+				"phoneData2": "",
+				"phoneClient": "04 90 29 70 81",
+				"phoneClient2": "",
+				"website": "https://terre-durable.fr",
+				"email": "",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": [
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"X",
+					"X"
+				],
+				"hoursAfternoon": [
+					"13h-16h30",
+					"13h-16h30",
+					"13h-16h30",
+					"13h-16h30",
+					"13h-16h30",
+					"X",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": ["Déchets inertes BTP"],
+				"forbiddenWaste": ["Déchets non cités"]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [4.7110124599258905, 44.266581222037765]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "103",
+				"color": "#21a548",
+				"name": "Calcaires Régionaux, Dépot de Montmou",
+				"address": "890 Chemin de derrière Montmou, Quartier Saint Loup",
+				"city": "84550 MORNAS",
+				"phoneData": "tel:+33490370223",
+				"phoneData2": "",
+				"phoneClient": "04 90 37 02 23",
+				"phoneClient2": "",
+				"website": "",
+				"email": "",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": [
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"X",
+					"X"
+				],
+				"hoursAfternoon": [
+					"13h-16h30",
+					"13h-16h30",
+					"13h-16h30",
+					"13h-16h30",
+					"13h-16h30",
+					"X",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"Béton ferraillé (Armatures coupées à ras du béton)",
+					"Béton non ferraillé (blocs <500 mm)",
+					"Graves et matériaux rocheux",
+					"Matériaux meubles non pollués",
+					"Mélange de déchets inertes non recyclables directement",
+					"Mélange de déchets inertes recyclables",
+					"Terres"
+				],
+				"forbiddenWaste": [
+					"Déchets dangereux",
+					"Déchets non inertes non dangereux"
+				]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [4.728364300252149, 44.221661505765695]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "104",
+				"color": "#21a548",
+				"name": "Caromb Coval",
+				"address": "La combe",
+				"city": "84330 CAROMB",
+				"phoneData": "tel:+33490120020",
+				"phoneData2": "",
+				"phoneClient": "04 90 12 00 20",
+				"phoneClient2": "",
+				"website": "https://copat84.com/recyclage-de-dechets-inertes-du-btp/",
+				"email": "mailto:commerce@copat84.fr",
+				"description": "Kbis nécessaire",
+				"hoursMorning": [
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"X",
+					"X"
+				],
+				"hoursAfternoon": [
+					"13h-17h",
+					"13h-17h",
+					"13h-17h",
+					"13h-17h",
+					"13h-17h",
+					"X",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": ["Déchets inerte du BTP"],
+				"forbiddenWaste": ["Déchets non cités"]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [5.1024784303407476, 44.088762072890674]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "105",
+				"color": "#1c62e2",
+				"name": "Mazan-Lafarge Granulat Sud",
+				"address": "Route de bédoin, Chemin de la Combe",
+				"city": "84380 MAZAN",
+				"phoneData": "tel:+33490656710",
+				"phoneData2": "",
+				"phoneClient": "04 90 65 67 10",
+				"phoneClient2": "",
+				"website": "https://www.lafarge.fr",
+				"email": "",
+				"description": "Document d’acceptation préalable à signer au début de chaque chantier.",
+				"hoursMorning": [
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"X",
+					"X"
+				],
+				"hoursAfternoon": [
+					"13h30-17h",
+					"13h30-17h",
+					"13h30-17h",
+					"13h30-17h",
+					"13h30-17h",
+					"X",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"Béton",
+					"Brique",
+					"Carrelage",
+					"Déchets inertes mélangés",
+					"Enrobé bitumeux",
+					"Terre non polluée",
+					"Tuile"
+				],
+				"forbiddenWaste": ["Déchets non cités"]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [5.104949168301117, 44.07944732538623]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "106",
+				"color": "#21a548",
+				"name": "Société Routière du Mont Ventoux",
+				"address": "214 route de Velleron",
+				"city": "84200 CARPENTRAS",
+				"phoneData": "tel:+33468117081",
+				"phoneData2": "",
+				"phoneClient": "04 68 11 70 81",
+				"phoneClient2": "",
+				"website": "https://eco-tri.fr/srmv/",
+				"email": "mailto:sebastien.ripert@colas.com",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": [
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"X",
+					"X"
+				],
+				"hoursAfternoon": [
+					"13h30-17h",
+					"13h30-17h",
+					"13h30-17h",
+					"13h30-17h",
+					"13h30-17h",
+					"X",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"Bois A à trier (bois de palette)",
+					"Bois de démolition mélangé ou bois B",
+					"Déchets dangereux (quantité limitée à 1T sur la déchèterie)",
+					"DND à trier",
+					"DEEE Froids + Ecrans (Sur consultation)",
+					"DEEE petits (sauf écrans et froids)",
+					"Gravats propres recyclables (exempts de DND)",
+					"Gravats non recyclables (exempts de DND) : Gravats sales en mélange contenant maximum 15% de DND",
+					"Gros pneumatiques (engins TP, agricoles...)",
+					"Laine de verre",
+					"Métaux (ferreux et non ferreux)",
+					"Plâtre trié (exempts de DND)",
+					"Papiers / cartons",
+					"Pneumatiques VL",
+					"Pneumatiques PL (hors pneus d’engins)",
+					"Végétaux / souches",
+					"Verre"
+				],
+				"forbiddenWaste": [
+					"Amiante",
+					"Bouteille de gaz / extincteurs",
+					"Cendres",
+					"Déchets ayant des risques d’explosions",
+					"Déchets radioactifs",
+					"Dépouille d’animaux",
+					"Médicaments / déchets anatomiques / hospitaliers / DASRI",
+					"Ordures ménagères",
+					"Terres polluées",
+					"Véhicules hors d’usage",
+					"Verres creux"
+				]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [5.0006420259704765, 44.02867482009787]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "107",
+				"color": "#1c62e2",
+				"name": "SAS Rossi",
+				"address": "80 chemin de Beauchamp",
+				"city": "84170 MONTEUX",
+				"phoneData": "tel:+33490662892",
+				"phoneData2": "",
+				"phoneClient": "04 90 66 28 92",
+				"phoneClient2": "",
+				"website": "http://www.rossi-fer.com",
+				"email": "mailto:contact@rossi-fer.com",
+				"description": "Documents nécessaires : carte d’identité et Kbis gratuit ou rémunéré selon les matériaux.",
+				"hoursMorning": [
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"X",
+					"X"
+				],
+				"hoursAfternoon": [
+					"14h-17h",
+					"14h-17h",
+					"14h-17h",
+					"14h-17h",
+					"14h-17h",
+					"X",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"Aluminium",
+					"Batterie au plomb",
+					"Bronze",
+					"Câbles alu pvc",
+					"Câbles cuivre PVC non brûlé",
+					"Cuivre rouge non brûlé",
+					"Ferraille",
+					"Fonte",
+					"Inox",
+					"Laiton (cuivre jaune)",
+					"Métaux ferreux et non ferreux",
+					"Moteur électrique",
+					"Moteur fonte",
+					"Plaques offset alu",
+					"Plomb",
+					"Radiateur mixte",
+					"Rail",
+					"Tournure aluminuim",
+					"Tambour fonte",
+					"Tournure de cuivre",
+					"Voiture hors d’usage",
+					"Zinc"
+				],
+				"forbiddenWaste": [
+					"NE PAS CONTENIR :",
+					"Des éléments nocifs, des matières explosives et/ou inflammables, amiantées.",
+					"Des autres déchets banals : Carton, bois, terre, béton, verre, caoutchoucs, pneumatiques…",
+					"Des déchets dangereux, DASRI, substances chimiques, fluides frigorigènes, PCT PCB, halogènes, pathogènes, métaux lourds…",
+					"Des batteries au lithium",
+					"Des limailles et chutes contenant des fluides comme de l’huile ou des émulsions huileuses",
+					"Des barils et contenants qui contiennent ou ont contenu de l’huile ou des peintures",
+					"EXEMPTS : de radioactivité ou émettant des rayonnements ionisants, de substance explosive ou pyrotechnique – corrosifs, comburants, facilement inflammable ou inflammables, de corps creux non dégaze (Réservoirs, bouteilles…) – gaz sous pressions, corps creux dont les deux extrémités sont fermées ou pincées, ou insuffisamment ouvertes, de tout résidu dangereux et/ou toxiques, de produit à risque bactériologique ou infectieux ou anatomiques (par exemple déchets d’activité de soin ou ordures ménagères), de liquides ou pâteux, huiles, carburants, boues, d’odeurs, d’objets de guerre ou partie d’objets de guerre"
+				]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [4.966987497134682, 44.0278851523018]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "108",
+				"color": "#1c62e2",
+				"name": "Recupagri",
+				"address": "Les jonquiers, Route de Velleron",
+				"city": "84210 PERNES-LES-FONTAINES",
+				"phoneData": "tel:+33611672695",
+				"phoneData2": "tel:+33785861618",
+				"phoneClient": "06 11 67 26 95",
+				"phoneClient2": "07 85 86 16 18",
+				"website": "https://www.recupagriecomtat.fr/",
+				"email": "",
+				"description": "Réservé aux agriculteurs adhérents.",
+				"hoursMorning": [],
+				"hoursAfternoon": [],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "Du 1er novembre au 28 février : de 13h30 à 17h30, Du 1er novembre au 31 mai : le mardi après-midi",
+				"hoursInformationSummer": "Du 1er juin au 30 octobre : les mardis et jeudis après-midi, Du 1er mars au 30 octobre : de 14h à 18h",
+				"authorizedWaste": [
+					"Tous les déchets issus de l’exploitation agricole"
+				],
+				"forbiddenWaste": ["Déchets non cités"]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [5.011897980986629, 44.00006569472855]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "109",
+				"color": "#1c62e2",
+				"name": "Recordier Recyclage",
+				"address": "1139 avenue René-Char, Route de Saint-Didier",
+				"city": "84210 PERNES-LES-FONTAINES",
+				"phoneData": "tel:+33490613044",
+				"phoneData2": "",
+				"phoneClient": "04 90 61 30 44",
+				"phoneClient2": "",
+				"website": "https://www.recordier-recyclage.com",
+				"email": "",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": [
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"X",
+					"X"
+				],
+				"hoursAfternoon": [
+					"13h30-17h30",
+					"13h30-17h30",
+					"13h30-17h30",
+					"13h30-17h30",
+					"13h30-17h30",
+					"X",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"Aluminium",
+					"Batterie",
+					"Bronze",
+					"Cable cuivre et aluminium",
+					"Cuivre",
+					"Déchets industriels banals",
+					"Fer",
+					"Inox",
+					"Laiton",
+					"Plomb"
+				],
+				"forbiddenWaste": ["Déchets non cités"]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [5.077580510913672, 43.998639728520445]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "110",
+				"color": "#1c62e2",
+				"name": "Négocia SARL Pernes-les-Fontaines",
+				"address": "Chemin de Saint Gens",
+				"city": "84210 PERNES-LES-FONTAINES",
+				"phoneData": "tel:+33490469633",
+				"phoneData2": "",
+				"phoneClient": "04 90 46 96 33",
+				"phoneClient2": "",
+				"website": "",
+				"email": "mailto:contact@sylvestre.fr",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": [
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"X",
+					"X"
+				],
+				"hoursAfternoon": [
+					"13h30-17h30",
+					"13h30-17h30",
+					"13h30-17h30",
+					"13h30-17h30",
+					"13h30-17h30",
+					"X",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"Bois (A) - palettes",
+					"Bois (B) - déchèterie",
+					"DND (DIB)",
+					"Gravats pollués",
+					"Gravats propres",
+					"Souches troncs poutres",
+					"Végétaux"
+				],
+				"forbiddenWaste": [
+					"Acides",
+					"Amiante",
+					"Batteries",
+					"Déchets alimentaires",
+					"Déchets biologiques",
+					"Déchets phytosanitaires",
+					"Déchets radioactifs",
+					"DEEE",
+					"Piles",
+					"Seringues"
+				]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [5.081114919135243, 44.026442070643846]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "111",
+				"color": "#1c62e2",
+				"name": "JRC Désamiantage",
+				"address": "592 Route de la Roque",
+				"city": "84210 ALTHEN-DES-PALUDS",
+				"phoneData": "tel:+33490468367",
+				"phoneData2": "",
+				"phoneClient": "04 90 46 83 67",
+				"phoneClient2": "",
+				"website": "https://www.desamiantage84.com/",
+				"email": "mailto:contact@jrc84.fr",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": [
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"X",
+					"X"
+				],
+				"hoursAfternoon": [
+					"13h-17h30",
+					"13h-17h30",
+					"13h-17h30",
+					"13h-17h30",
+					"13h-17h30",
+					"X",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": ["Amiante"],
+				"forbiddenWaste": ["Déchets non cités"]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [4.956591155089523, 44.01175519437861]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "112",
+				"color": "#1c62e2",
+				"name": "Guy Dauphin Environnement",
+				"address": "261 Route de Camsaud",
+				"city": "84700 SORGUES",
+				"phoneData": "tel:+33490830228",
+				"phoneData2": "",
+				"phoneClient": "04 90 83 02 28",
+				"phoneClient2": "",
+				"website": "https://www.gderecyclage.com/",
+				"email": "",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": [
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"X",
+					"X"
+				],
+				"hoursAfternoon": [
+					"13h30-16h30",
+					"13h30-16h30",
+					"13h30-16h30",
+					"13h30-16h30",
+					"13h30-16h30",
+					"X",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"Matières rachetées :",
+					"- Aluminium",
+					"- Batteries",
+					"- Câbles",
+					"- Cuivre",
+					"- Ferrailles",
+					"- Laitons",
+					"- Véhicules hors d’usage",
+					"- Zinc",
+					"Déchets acceptés :",
+					"- Batteries",
+					"- Métaux ferreux et non ferreux"
+				],
+
+				"forbiddenWaste": ["Déchets non cités"]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [4.873545660737618, 44.01371701303392]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "113",
+				"color": "#1c62e2",
+				"name": "Métaux Picaud",
+				"address": "1312 chemin Granges",
+				"city": "84700 SORGUES",
+				"phoneData": "tel:+33490396786",
+				"phoneData2": "",
+				"phoneClient": "04 90 39 67 86",
+				"phoneClient2": "",
+				"website": "https://www.metaux-picaud.fr/",
+				"email": "",
+				"description": "Document nécessaire : pièce d'identité\nRachat de matériaux\nMois d'août : tous les matins de 7h à 13h",
+				"hoursMorning": [
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"8h-11h45 (semaines paires)",
+					"X"
+				],
+				"hoursAfternoon": [
+					"13h30-17h30",
+					"13h30-17h30",
+					"13h30-17h30",
+					"13h30-17h30",
+					"13h30-17h30",
+					"X",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "Mois d'août : tous les matins de 7h à 13h",
+				"authorizedWaste": ["Métaux non dangereux"],
+				"forbiddenWaste": ["Déchets non cités"]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [4.870285339749581, 43.99233760100528]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "114",
+				"color": "#1c62e2",
+				"name": "R.M.B SARL",
+				"address": "Zone Industrielle Fournalet IV, 9 avenue Marius Bucchi",
+				"city": "84700 SORGUES",
+				"phoneData": "tel:+33490396522",
+				"phoneData2": "tel:+33618859975",
+				"phoneClient": "04 90 39 65 22",
+				"phoneClient2": "06 18 85 99 75",
+				"website": "https://www.rmb-travaux.com/",
+				"email": "mailto:guillaume@bucchi.fr",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": [
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"X",
+					"X"
+				],
+				"hoursAfternoon": [
+					"13h-17h",
+					"13h-17h",
+					"13h-17h",
+					"13h-17h",
+					"13h-16h",
+					"X",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "Mois d'août : tous les matins de 7h à 13h",
+				"authorizedWaste": [
+					"Amiante (conditions particulières)",
+					"Déchets bois / élagage",
+					"Déchets des travaux en milieux aquatiques",
+					"Déchets inertes issus du BTP",
+					"Terre non polluée",
+					"Terre végétale"
+				],
+				"forbiddenWaste": ["Déchets non cités"]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [4.881629794914068, 44.02008774008927]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "115",
+				"color": "#1c62e2",
+				"name": "Calcaires Régionaux, Dépôt de Vedène",
+				"address": "281 Chemin du Bac de Bompas, ZA Les Fonds",
+				"city": "84270 VEDENE",
+				"phoneData": "tel:+3344221070",
+				"phoneData2": "",
+				"phoneClient": "04 42 22 10 70",
+				"phoneClient2": "",
+				"website": "",
+				"email": "",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": [
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"X",
+					"X"
+				],
+				"hoursAfternoon": [
+					"13h-17h",
+					"13h-17h",
+					"13h-17h",
+					"13h-17h",
+					"13h-17h",
+					"X",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"Béton ferraillé (Armatures coupées à ras du béton)",
+					"Béton non ferraillé (blocs <500 mm)",
+					"Graves et matériaux rocheux",
+					"Matériaux meubles non pollués",
+					"Mélange de déchets inertes non recyclables directement",
+					"Mélange de déchets inertes recyclables",
+					"Terres"
+				],
+				"forbiddenWaste": [
+					"Déchets dangereux",
+					"Déchets non inertes non dangereux"
+				]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [4.896669997420897, 43.968695015261744]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "116",
+				"color": "#1c62e2",
+				"name": "Société des carrières vauclusiennes",
+				"address": "Quartier « LA FRANCE », route de Morières",
+				"city": "84270 VEDENE",
+				"phoneData": "tel:+33490231462",
+				"phoneData2": "",
+				"phoneClient": "04 90 23 14 62",
+				"phoneClient2": "",
+				"website": "",
+				"email": "",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": [
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"X",
+					"X"
+				],
+				"hoursAfternoon": [
+					"13h-17h",
+					"13h-17h",
+					"13h-17h",
+					"13h-17h",
+					"13h-16h",
+					"X",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"Béton",
+					"Brique",
+					"Carrelage",
+					"Déchets inertes mélangés",
+					"Enrobé bitumeux",
+					"Terres non polluées",
+					"Tuile"
+				],
+				"forbiddenWaste": ["Déchets non cités"]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [4.904222934374502, 43.95589682632248]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "117",
+				"color": "#1c62e2",
+				"name": "Terre et passion services",
+				"address": "132 Route de la Sone",
+				"city": "84570 VILLES-SUR-AUZON",
+				"phoneData": "tel:+33615420606",
+				"phoneData2": "",
+				"phoneClient": "06 15 42 06 06",
+				"phoneClient2": "",
+				"website": "http://www.terre-etpassion.com/index.html",
+				"email": "mailto:terreetpassionservices@gmail.com",
+				"description": "Sur contact téléphonique",
+				"hoursMorning": ["", "", "", "", "", "X", "X"],
+				"hoursAfternoon": ["", "", "", "", "", "X", "X"],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"Service de compostage des déchets verts (diamètre 25 cm maxi pour les végétaux et diamètre non limité pour les bois-troncs)"
+				],
+				"forbiddenWaste": ["Tous déchets autres que déchets verts"]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [5.226872268572774, 44.058576782589576]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "118",
+				"color": "#1c62e2",
+				"name": "Richard matériaux",
+				"address": "Rte de Carpentras",
+				"city": "84570 VILLES-SUR-AUZON",
+				"phoneData": "tel:+33490619474",
+				"phoneData2": "",
+				"phoneClient": "04 90 61 94 74",
+				"phoneClient2": "",
+				"website": "",
+				"email": "",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": [
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"X",
+					"X"
+				],
+				"hoursAfternoon": [
+					"13h30-18h",
+					"13h30-18h",
+					"13h30-18h",
+					"13h30-18h",
+					"13h30-18h",
+					"X",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": ["Deblais terreux", "Gravats"],
+				"forbiddenWaste": ["Déchets non cités"]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [5.22489416441808, 44.05757995493631]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "119",
+				"color": "#1c62e2",
+				"name": "Sud Recyclage",
+				"address": "19 chemin des Grès",
+				"city": "84220 CABRIERES-D'AVIGNON",
+				"phoneData": "tel:+33490769708",
+				"phoneData2": "tel:+33661720866",
+				"phoneClient": "04 90 76 97 08",
+				"phoneClient2": "06 61 72 08 66",
+				"website": "http://www.sud-recyclage-vaucluse.fr/",
+				"email": "mailto:sudrecyclage@orange.fr",
+				"description": "Kbis et pièce d'identité",
+				"hoursMorning": [
+					"7h30-12h30",
+					"7h30-12h30",
+					"7h30-12h30",
+					"7h30-12h30",
+					"7h30-12h30",
+					"8h-12h",
+					"X"
+				],
+				"hoursAfternoon": [
+					"13h30-19h",
+					"13h30-19h",
+					"13h30-19h",
+					"13h30-19h",
+					"13h30-19h",
+					"(sur RDV)",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": ["Déchets verts", "Souches", "Troncs"],
+				"forbiddenWaste": ["Déchets non cités"]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [5.152269739744821, 43.88411592270645]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "120",
+				"color": "#1c62e2",
+				"name": "NEGOCIA SARL Maubec",
+				"address": "850 Chemin des Veginières",
+				"city": "84660 MAUBEC",
+				"phoneData": "tel:+33490769669",
+				"phoneData2": "",
+				"phoneClient": "04 90 76 96 69",
+				"phoneClient2": "",
+				"website": "",
+				"email": "mailto:contact@sylvestre.fr",
+				"description": "Location de bennes",
+				"hoursMorning": [
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"X",
+					"X"
+				],
+				"hoursAfternoon": [
+					"13h30-17h30",
+					"13h30-17h30",
+					"13h30-17h30",
+					"13h30-17h30",
+					"13h30-17h30",
+					"X",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"Bois (A) - palettes",
+					"Bois (B) - déchèterie",
+					"DND (DIB)",
+					"Gravats pollués",
+					"Gravats propres",
+					"Souches troncs poutres - NT",
+					"Végétaux"
+				],
+				"forbiddenWaste": [
+					"Acides",
+					"Amiante",
+					"Batteries",
+					"Déchets alimentaires",
+					"Déchets biologiques",
+					"Déchets phytosanitaires",
+					"Déchets radioactifs",
+					"DEEE",
+					"Peintures",
+					"Piles",
+					"Seringues"
+				]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [5.143954255088407, 43.85961365700506]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "121",
+				"color": "#1c62e2",
+				"name": "Gravisud - Cavaillon",
+				"address": "4900 chemin des châteaux, Les Vignères",
+				"city": "84300 CAVAILLON",
+				"phoneData": "tel:+33490716452",
+				"phoneData2": "",
+				"phoneClient": "04 90 71 64 52",
+				"phoneClient2": "",
+				"website": "",
+				"email": "mailto:contact@gravisud.fr",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": [
+					"9h-12h",
+					"9h-12h",
+					"9h-12h",
+					"9h-12h",
+					"9h-12h",
+					"9h-12h",
+					"X"
+				],
+				"hoursAfternoon": [
+					"14h-17h",
+					"14h-17h",
+					"14h-17h",
+					"14h-17h",
+					"14h-17h",
+					"14h-17h",
+					"X"
+				],
+				"hoursMorningSummer": [
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"X"
+				],
+				"hoursAfternoonSummer": [
+					"14h-18h",
+					"14h-18h",
+					"14h-18h",
+					"14h-18h",
+					"14h-18h",
+					"14h-18h",
+					"X"
+				],
+				"hoursInformationWinter": "Du 1er novembre au 14 février",
+				"hoursInformationSummer": "Du 15 février au 31 octobre",
+				"authorizedWaste": [
+					"Béton",
+					"Brique",
+					"Carrelage",
+					"Déchets inertes mélangés",
+					"Enrobé bitumeux",
+					"Terres non polluées",
+					"Tuile"
+				],
+				"forbiddenWaste": ["Déchets non cités"]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [5.02935072254633, 43.866661401412465]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "122",
+				"color": "#1c62e2",
+				"name": "Pinguet Environnement SAS",
+				"address": "ZI Les bourguignons, 708E Avenue des Argiles",
+				"city": "84400 APT",
+				"phoneData": "tel:+33490745126",
+				"phoneData2": "tel:+33611586584",
+				"phoneClient": "04 90 74 51 26",
+				"phoneClient2": "06 11 58 65 84",
+				"website": "https://pinguetentreprises.fr",
+				"email": "mailto:pinguetsa@free.fr",
+				"description": "Chèque de caution Location de bennes",
+				"hoursMorning": [
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"8h-12h",
+					"X",
+					"X"
+				],
+				"hoursAfternoon": [
+					"13h30-17h",
+					"13h30-17h",
+					"13h30-17h",
+					"13h30-17h",
+					"13h30-17h",
+					"X",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"Bois B de déchetteries",
+					"Déchets verts",
+					"Gravats",
+					"Plastiques",
+					"Terres d'excavation"
+				],
+				"forbiddenWaste": ["Déchets non cités"]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [5.34792244465328, 43.88168611853855]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "123",
+				"color": "#1c62e2",
+				"name": "Bergier Valorisation",
+				"address": "2106 Route de Cadenet, Rd 45",
+				"city": "84160 VAUGINES",
+				"phoneData": "tel:+33490680140",
+				"phoneData2": "tel:+33612034460",
+				"phoneClient": "04 90 68 01 40",
+				"phoneClient2": "06 12 03 44 60",
+				"website": "",
+				"email": "mailto:bergier.valorisation@orange.fr",
+				"description": "Circulation interdite aux PL par Ansouis, Cadenet, Puyvert Accès par Cucuron, Lourmarin",
+				"hoursMorning": [
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"7h30-12h",
+					"X",
+					"X"
+				],
+				"hoursAfternoon": [
+					"13h30-16h45",
+					"13h30-16h45",
+					"13h30-16h45",
+					"13h30-16h45",
+					"13h30-16h15",
+					"X",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"Déchets Inertes du Btp",
+					"Briques",
+					"Bétons (Armé, canalisations, longines, bordures, trottoir, poteaux)",
+					"Déblais terreux de terrassement",
+					"Enrobés bitumeux (non pollués)",
+					"Terres végétales",
+					"Tuiles"
+				],
+				"forbiddenWaste": ["Déchets dangereux, pollués, non inertes"]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [5.403716241592479, 43.75884504899745]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "privateLandfill",
+				"id": "124",
+				"color": "#1c62e2",
+				"name": "AD Bennes location",
+				"address": "Route d'Ansouis",
+				"city": "84120 PERTUIS",
+				"phoneData": "tel:+33767806239",
+				"phoneData2": "",
+				"phoneClient": "07 67 80 62 39",
+				"phoneClient2": "",
+				"website": "https://www.ad-bennes.com/",
+				"email": "mailto:contact@ad-bennes.fr",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": ["9h", "9h", "9h", "9h", "9h", "8h-12h", "X"],
+				"hoursAfternoon": ["20h", "20h", "20h", "20h", "20h", "X", "X"],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": ["DIB", "Gravats", "Végétaux"],
+				"forbiddenWaste": ["Tout autre déchet non cité"]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [5.495050906745759, 43.71147407809547]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "secondhandAssociation",
+				"id": "201",
+				"color": "#f7aa04",
+				"name": "La Petite ressourcerie",
+				"address": "61 Cours Victor Hugo",
+				"city": "84600 VALREAS",
+				"phoneData": "tel:+33490374127",
+				"phoneData2": "",
+				"phoneClient": "04 90 37 41 27",
+				"phoneClient2": "",
+				"website": "https://www.facebook.com/LaPetiteRessourcerieValreas",
+				"email": "mailto:ressourcerie@coupdepouce84.fr",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": ["X", "9h-12h", "X", "9h-12h", "X", "X", "X"],
+				"hoursAfternoon": ["X", "13h30-17h", "X", "X", "X", "X", "X"],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"Tous les objets doivent être en bon état",
+					"Bibelots",
+					"Décoration",
+					"Livres pour enfant",
+					"Meubles",
+					"Objets du quotidien",
+					"vaisselle",
+					"Petits électroménagers (cafetière, fer à repasser, grille-pains, bouilloire, etc.)"
+				],
+				"forbiddenWaste": [
+					"Objets en mauvais état en général",
+					"Gros appareils électroménagers (Réfrigérateurs, machines à laver, etc.)",
+					"Objets de puériculture",
+					"Objets utilisant des produits inflammables (chauffage, fioul, etc.)",
+					"Textiles (vêtements, chaussures, etc.)"
+				]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [4.987837524135029, 44.384833622623994]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "secondhandAssociation",
+				"id": "202",
+				"color": "#f7aa04",
+				"name": "Ressourcerie l'E-trier",
+				"address": "Zone d'activité Notre Dame",
+				"city": "84430 MONDRAGON",
+				"phoneData": "tel:+33490400398",
+				"phoneData2": "",
+				"phoneClient": "04 90 40 03 98",
+				"phoneClient2": "",
+				"website": "",
+				"email": "mailto:ressourcerie@pae84.org",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": [
+					"X",
+					"9h-12h",
+					"9h-12h",
+					"9h-12h",
+					"9h-12h",
+					"9h-12h",
+					"X"
+				],
+				"hoursAfternoon": [
+					"X",
+					"13h30-16h",
+					"13h30-16h",
+					"13h30-16h",
+					"13h30-16h",
+					"13h30-16h",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"Bijoux",
+					"Electroménager",
+					"Livres",
+					"Jouets",
+					"Meubles",
+					"Objets de loisirs",
+					"Outils",
+					"Vaisselle",
+					"Vélos",
+					"Vêtements"
+				],
+				"forbiddenWaste": ["Objets dangereux ou en mauvais état"]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [4.712887818927549, 44.30958532570896]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "secondhandAssociation",
+				"id": "203",
+				"color": "#f7aa04",
+				"name": "La Musardière",
+				"address": "14 quai de Verdun",
+				"city": "84110 VAISON-LA-ROMAINE",
+				"phoneData": "tel:+33766890534",
+				"phoneData2": "",
+				"phoneClient": "07 66 89 05 34",
+				"phoneClient2": "",
+				"website": "",
+				"email": "mailto:ressourcerie@adec-pv.fr",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": ["X", "X", "X", "X", "X", "X", "X"],
+				"hoursAfternoon": [
+					"14h-16h",
+					"X",
+					"14h-16h",
+					"X",
+					"14h-16h",
+					"14h-16h",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": ["Jeux adultes / enfants", "Meubles", "Vêtements"],
+				"forbiddenWaste": [
+					"Objets dangereux",
+					"Electroménager ou en mauvais état"
+				]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [5.069028268307746, 44.239644832370516]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "secondhandAssociation",
+				"id": "204",
+				"color": "#f7aa04",
+				"name": "EMMAÜS",
+				"address": "748 chemin de la papeterie",
+				"city": "84350 COURTHEZON",
+				"phoneData": "tel:+33974562773",
+				"phoneData2": "",
+				"phoneClient": "09 74 56 27 73",
+				"phoneClient2": "",
+				"website": "https://www.emmaus84.com/",
+				"email": "",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": ["X", "8h-12h", "8h-12h", "8h-12h", "8h-12h", "X", "X"],
+				"hoursAfternoon": [
+					"X",
+					"13h30-17h",
+					"13h30-17h",
+					"13h30-17h",
+					"X",
+					"13h30-17h",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"CD / DVD",
+					"Casettes audios / vidéos",
+					"Electroménager",
+					"Equipements puériculture",
+					"Informatique",
+					"Jeux / jouets",
+					"Livres",
+					"Meubles",
+					"Objets de décoration",
+					"Vaisselle",
+					"Vêtements / chaussures / autres textiles"
+				],
+				"forbiddenWaste": [
+					"Objets dangereux",
+					"Appareils audiovisuels ou en mauvais état"
+				]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [4.886527268250878, 44.10829301707421]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "secondhandAssociation",
+				"id": "205",
+				"color": "#f7aa04",
+				"name": "Recyclerie les 3 Eco",
+				"address": "620 av Louis Boudin, Zone de la Grande Marine",
+				"city": "84800 L'ISLE-SUR-LA-SORGUE",
+				"phoneData": "tel:+33486343131",
+				"phoneData2": "",
+				"phoneClient": "04 86 34 31 31",
+				"phoneClient2": "",
+				"website": "https://larecyclerieles3eco.com/",
+				"email": "mailto:les3eco@gmail.com",
+				"description": "Pour plus d'informations, contactez la structure.",
+				"hoursMorning": ["X", "9h-12h", "X", "9h-12h", "X", "9h-12h", "X"],
+				"hoursAfternoon": ["X", "X", "X", "X", "X", "X", "X"],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"Tout les objets doivent être en bon état",
+					"Bureaux",
+					"Literie",
+					"Livres",
+					"Meubles",
+					"Objets du quotidien",
+					"Pour objets volumineux : prévenir à l'avance par téléphone"
+				],
+				"forbiddenWaste": [
+					"Objets en mauvais état en général",
+					"Anciennes télévisions",
+					"Appareils numériques anciens",
+					"Imprimantes"
+				]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [5.0322350259661945, 43.92436343163591]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"categorie": "secondhandAssociation",
+				"id": "206",
+				"color": "#ff9900",
+				"name": "Recyclerie Apt-luberon",
+				"address": "Zone industrielle des Bourguignons, 479 avenue de Roumanille",
+				"city": "84400 APT",
+				"phoneData": "tel:+33683495590",
+				"phoneData2": "",
+				"phoneClient": "06 83 49 55 90",
+				"phoneClient2": "",
+				"website": "https://www.recyclerie-apt-luberon.blogspot.fr",
+				"email": "mailto:recyclerie.apt.luberon@gmail.com",
+				"description": "Pour plus d'informations, contactez la structure.\nCollecte à domicile sur rendez-vous. Service gratuit pour les objets de moins de 6m3. En cas de taille supérieure, création d'un devis spécifique.",
+				"hoursMorning": ["X", "X", "X", "X", "X", "X", "X"],
+				"hoursAfternoon": [
+					"14h-18h",
+					"14h-18h",
+					"X",
+					"14h-18h",
+					"14h-18h",
+					"X",
+					"X"
+				],
+				"hoursMorningSummer": [],
+				"hoursAfternoonSummer": [],
+				"hoursInformationWinter": "",
+				"hoursInformationSummer": "",
+				"authorizedWaste": [
+					"Bibelots",
+					"Equipements ménagers",
+					"Meubles",
+					"Outils",
+					"Vêtements",
+					"(Dans la limite de capacité de stockage et de la réutilisabilité ou de la réparabilité des objets apportés)"
+				],
+				"forbiddenWaste": ["Déchets non cités"]
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [5.37400857112083, 43.888488774059525]
 			}
 		}
 	]
