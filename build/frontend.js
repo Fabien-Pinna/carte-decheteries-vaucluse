@@ -871,99 +871,135 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const addGeoJSONLayers = (map, popupClassName) => {
-  const geojsonFiles = ["privateLandfill", "publicLandfill", "secondhandAssociation"];
-  const wasteTypes = ["Amiante", "Bois", "Cartons", "DEEE", "Encombrants", "Gravats", "Huiles", "Metaux", "Pneus", "Vegetaux", "Verre"];
-  const filterGroup = document.createElement('nav');
-  filterGroup.id = 'filter-group';
-  filterGroup.className = 'filter-group';
-  document.getElementsByClassName('map-container')[0].appendChild(filterGroup);
-  const wasteFilterGroup = document.createElement('nav');
-  wasteFilterGroup.id = 'waste-filter-group';
-  wasteFilterGroup.className = 'waste-filter-group';
-  document.getElementsByClassName('map-container')[0].appendChild(wasteFilterGroup);
 
-  // Create reset button
-  const resetButton = document.createElement('button');
-  resetButton.id = 'reset-filters';
-  resetButton.className = 'reset-filters';
-  resetButton.textContent = 'Reset Filters';
-  document.getElementsByClassName('map-container')[0].appendChild(resetButton);
-  const applyCombinedFilters = () => {
-    const checkedWastes = [...document.querySelectorAll('#waste-filter-group input')].filter(el => el.checked).map(el => el.id);
-    const checkedSymbols = [...document.querySelectorAll('#filter-group input')].filter(el => el.checked).map(el => el.id);
-    geojsonFiles.forEach(file => {
-      const layerId = `${file}-unclustered-point`;
-      const wasteFilterConditions = ['all', ...checkedWastes.map(wasteType => ['==', wasteType, true])];
-      const symbolFilterConditions = ['in', 'icon', ...checkedSymbols];
-      const combinedFilterConditions = ['all', wasteFilterConditions, symbolFilterConditions];
-      map.setFilter(layerId, combinedFilterConditions);
-    });
-  };
-  const resetFilters = () => {
-    // Reset waste type filters
-    document.querySelectorAll('#waste-filter-group input').forEach(input => {
-      input.checked = false;
-    });
+// Function to get the corresponding label for a given symbol
+const getLabelForSymbol = symbol => {
+  switch (symbol) {
+    case 'private-marker':
+      return 'Établissements Privés';
+    case 'public-marker':
+      return 'Déchèteries Publiques';
+    case 'association-marker':
+      return 'Ressourceries & Associations';
+    default:
+      return symbol;
+  }
+};
 
-    // Reset landfill category filters
-    document.querySelectorAll('#filter-group input').forEach(input => {
-      input.checked = true;
-    });
+// Function to create and append a DOM element
+const createAndAppendElement = (type, attributes, parent) => {
+  const element = document.createElement(type);
+  Object.keys(attributes).forEach(key => {
+    element[key] = attributes[key];
+  });
+  parent.appendChild(element);
+  return element;
+};
 
-    // Apply filters to update the map
-    applyCombinedFilters();
-  };
+// Function to apply combined filters on map layers
+const applyCombinedFilters = (map, geojsonFiles) => {
+  const checkedWastes = [...document.querySelectorAll('#waste-filter-group input')].filter(el => el.checked).map(el => el.id);
+  const checkedSymbols = [...document.querySelectorAll('#filter-group input')].filter(el => el.checked).map(el => el.id);
+  geojsonFiles.forEach(file => {
+    const layerId = `${file}-unclustered-point`;
+    const wasteFilterConditions = ['all', ...checkedWastes.map(wasteType => ['==', wasteType, true])];
+    const symbolFilterConditions = ['in', 'icon', ...checkedSymbols];
+    const combinedFilterConditions = ['all', wasteFilterConditions, symbolFilterConditions];
+    map.setFilter(layerId, combinedFilterConditions);
+  });
+};
+
+// Function to reset all filters
+const resetFilters = (map, geojsonFiles) => {
+  // Reset waste type filters
+  document.querySelectorAll('#waste-filter-group input').forEach(input => {
+    input.checked = false;
+  });
+
+  // Reset category filters
+  document.querySelectorAll('#filter-group input').forEach(input => {
+    input.checked = true;
+  });
+
+  // Apply filters to update the map
+  applyCombinedFilters(map, geojsonFiles);
+};
+
+// Main function to add GeoJSON layers
+const addGeoJSONLayers = map => {
+  const geojsonFiles = ['privateLandfill', 'publicLandfill', 'secondhandAssociation'];
+  const wasteTypes = ['Amiante', 'Bois', 'Cartons', 'DEEE', 'Encombrants', 'Gravats', 'Huiles', 'Metaux', 'Pneus', 'Vegetaux', 'Verre'];
+
+  // Create and append filter groups and reset button
+  const filterGroup = createAndAppendElement('nav', {
+    id: 'filter-group',
+    className: 'filter-group'
+  }, document.getElementsByClassName('map-container')[0]);
+  const wasteFilterGroup = createAndAppendElement('nav', {
+    id: 'waste-filter-group',
+    className: 'waste-filter-group'
+  }, document.getElementsByClassName('map-container')[0]);
+  const resetButton = createAndAppendElement('button', {
+    id: 'reset-filters',
+    className: 'reset-filters',
+    textContent: 'Reset Filters'
+  }, document.getElementsByClassName('map-container')[0]);
 
   // Add event listener to reset button
-  resetButton.addEventListener('click', resetFilters);
-  for (const wasteType of wasteTypes) {
-    const input = document.createElement('input');
-    input.type = 'checkbox';
-    input.id = wasteType;
-    input.checked = false; // Initial state is not-checked
-    wasteFilterGroup.appendChild(input);
-    const label = document.createElement('label');
-    label.setAttribute('for', wasteType);
-    label.textContent = wasteType;
-    wasteFilterGroup.appendChild(label);
-  }
+  resetButton.addEventListener('click', () => resetFilters(map, geojsonFiles));
+
+  // Create waste type checkboxes
+  wasteTypes.forEach(wasteType => {
+    createAndAppendElement('input', {
+      type: 'checkbox',
+      id: wasteType,
+      checked: false
+    }, wasteFilterGroup);
+    createAndAppendElement('label', {
+      htmlFor: wasteType,
+      textContent: wasteType
+    }, wasteFilterGroup);
+  });
+
+  // Fetch and process GeoJSON files
   geojsonFiles.forEach(async file => {
     const dataUrl = `/wordpress/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`;
-    const response = await axios__WEBPACK_IMPORTED_MODULE_5__["default"].get(dataUrl);
-    const data = response.data;
+    const {
+      data
+    } = await axios__WEBPACK_IMPORTED_MODULE_5__["default"].get(dataUrl);
+
+    // Add source and layer to the map
     map.addSource(file, {
-      type: "geojson",
-      data: data
+      type: 'geojson',
+      data
     });
     const layerId = `${file}-unclustered-point`;
     map.addLayer({
       id: layerId,
-      type: "symbol",
+      type: 'symbol',
       source: file,
       layout: {
-        "icon-image": ["get", "icon"],
-        "icon-size": 0.5,
-        "icon-allow-overlap": true
+        'icon-image': ['get', 'icon'],
+        'icon-size': 0.5,
+        'icon-allow-overlap': true
       }
     });
 
-    // Change the cursor to a pointer when the mouse is over the places layer.
+    // Add mouse events for cursor style
     map.on('mouseenter', layerId, () => {
       map.getCanvas().style.cursor = 'pointer';
     });
-
-    // Change it back to a pointer when it leaves.
     map.on('mouseleave', layerId, () => {
       map.getCanvas().style.cursor = '';
     });
 
-    // Ajoutez un événement click pour afficher un Popup
+    // Add click event to show popup
     map.on('click', layerId, e => {
       const coordinates = e.features[0].geometry.coordinates.slice();
       const properties = e.features[0].properties;
-      const popupNode = document.createElement('div');
-      popupNode.className = `popup_${file}`;
+      const popupNode = createAndAppendElement('div', {
+        className: `popup_${file}`
+      }, document.body);
       react_dom__WEBPACK_IMPORTED_MODULE_1___default().render((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Popup_Popup__WEBPACK_IMPORTED_MODULE_4__["default"], {
         landfill: {
           properties
@@ -971,25 +1007,24 @@ const addGeoJSONLayers = (map, popupClassName) => {
       }), popupNode);
       new (mapbox_gl__WEBPACK_IMPORTED_MODULE_3___default().Popup)().setLngLat(coordinates).setDOMContent(popupNode).addTo(map);
     });
-    const symbols = [];
-    for (const feature of data.features) {
-      const symbol = feature.properties.icon;
-      if (!symbols.includes(symbol)) symbols.push(symbol);
-    }
-    for (const symbol of symbols) {
-      const input = document.createElement('input');
-      input.type = 'checkbox';
-      input.id = symbol;
-      input.checked = true;
-      filterGroup.appendChild(input);
-      const label = document.createElement('label');
-      label.setAttribute('for', symbol);
-      label.textContent = symbol;
-      filterGroup.appendChild(label);
-    }
-    // Update both filters when any checkbox is changed
+
+    // Create category checkboxes
+    const uniqueSymbols = [...new Set(data.features.map(feature => feature.properties.icon))];
+    uniqueSymbols.forEach(symbol => {
+      createAndAppendElement('input', {
+        type: 'checkbox',
+        id: symbol,
+        checked: true
+      }, filterGroup);
+      createAndAppendElement('label', {
+        htmlFor: symbol,
+        textContent: getLabelForSymbol(symbol)
+      }, filterGroup);
+    });
+
+    // Add change event to all checkboxes
     document.querySelectorAll('input[type="checkbox"]').forEach(input => {
-      input.addEventListener('change', applyCombinedFilters);
+      input.addEventListener('change', () => applyCombinedFilters(map, geojsonFiles));
     });
   });
 };
