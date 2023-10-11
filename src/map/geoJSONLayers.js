@@ -138,7 +138,7 @@ const addGeoJSONLayers = (map) => {
 
     // Fetch and process GeoJSON files
     geojsonFiles.forEach(async (file) => {
-        const dataUrl = `/wordpress/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`;
+        const dataUrl = `/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`;
         const { data } = await axios.get(dataUrl);
 
         // Add source and layer to the map

@@ -185,7 +185,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const fetchDataAndInitializeMap = async (mapContainer, lat, lng, zoom) => {
   try {
-    const response = await fetch('/wordpress/wp-admin/admin-ajax.php?action=get_mapbox_access_token');
+    const response = await fetch('/wp-admin/admin-ajax.php?action=get_mapbox_access_token');
     if (!response.ok) throw new Error('Failed to fetch Mapbox access token');
     const {
       accessToken
@@ -881,7 +881,7 @@ const addGeoJSONLayers = map => {
 
   // Fetch and process GeoJSON files
   geojsonFiles.forEach(async file => {
-    const dataUrl = `/wordpress/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`;
+    const dataUrl = `/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`;
     const {
       data
     } = await axios__WEBPACK_IMPORTED_MODULE_9__["default"].get(dataUrl);
