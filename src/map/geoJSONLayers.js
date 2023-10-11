@@ -14,6 +14,25 @@ const addGeoJSONLayers = (map) => {
     const wasteTypes = ['Amiante', 'Bois', 'Cartons', 'DEEE', 'Encombrants', 'Gravats', 'Huiles', 'Metaux', 'Pneus', 'Vegetaux', 'Verre'];
 
     // Create and append filters block
+    const filtersTab = createAndAppendElement(
+        'input',
+        {
+            type: 'checkbox',
+            id: 'filters-tab',
+            name: 'filters-tab'
+        },
+        document.getElementsByClassName('map-container')[0]
+    );
+    createAndAppendElement(
+        'label',
+        {
+            htmlFor: 'filters-tab',
+            id: 'filters-tab-label',
+            textContent: 'Filtres'
+        },
+        document.getElementsByClassName('map-container')[0]
+    );
+
     const filtersBlock = createAndAppendElement(
         'div',
         {
@@ -22,13 +41,6 @@ const addGeoJSONLayers = (map) => {
         document.getElementsByClassName('map-container')[0]
     );
 
-    const filtersTab = createAndAppendElement(
-        'div',
-        {
-            className: 'filters-tab'
-        },
-        document.getElementsByClassName('map-container')[0]
-    );
 
     // Create and append filter groups
 
@@ -82,16 +94,7 @@ const addGeoJSONLayers = (map) => {
         filtersBlock
     );
 
-    const toggleFilterDrawer = () => {
-        const filtersBlock = document.querySelector('.filters-block');
-        if (filtersBlock.classList.contains('open')) {
-            filtersBlock.classList.remove('open');
-        } else {
-            filtersBlock.classList.add('open');
-        }
-    };
 
-    filtersTab.addEventListener('click', toggleFilterDrawer);
 
     const adjustFilterBlockHeight = () => {
         const canvasHeight = document.querySelector('.map-container canvas').offsetHeight;

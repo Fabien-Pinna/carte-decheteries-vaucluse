@@ -244,16 +244,10 @@
   background: #f7aa04;
 }
 .mapboxgl-popup-content .box_content {
-  max-height: 420px;
-  overflow-y: auto;
-  /* Firefox */
   scrollbar-width: thin;
   scrollbar-color: #444 #f1f1f1;
-}
-@media screen and (min-width: 800px) {
-  .mapboxgl-popup-content .box_content {
-    max-height: 500px;
-  }
+  max-height: 420px;
+  overflow-y: auto;
 }
 .mapboxgl-popup-content .box_content::-webkit-scrollbar {
   width: 12px;
@@ -270,6 +264,11 @@
 }
 .mapboxgl-popup-content .box_content::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+@media screen and (min-width: 800px) {
+  .mapboxgl-popup-content .box_content {
+    max-height: 500px;
+  }
 }
 .mapboxgl-popup-content .box_content h1,
 .mapboxgl-popup-content .box_content p,

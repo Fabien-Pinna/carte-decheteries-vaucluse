@@ -809,11 +809,18 @@ const addGeoJSONLayers = map => {
   const wasteTypes = ['Amiante', 'Bois', 'Cartons', 'DEEE', 'Encombrants', 'Gravats', 'Huiles', 'Metaux', 'Pneus', 'Vegetaux', 'Verre'];
 
   // Create and append filters block
+  const filtersTab = (0,_utils_createAndAppendElement__WEBPACK_IMPORTED_MODULE_5__.createAndAppendElement)('input', {
+    type: 'checkbox',
+    id: 'filters-tab',
+    name: 'filters-tab'
+  }, document.getElementsByClassName('map-container')[0]);
+  (0,_utils_createAndAppendElement__WEBPACK_IMPORTED_MODULE_5__.createAndAppendElement)('label', {
+    htmlFor: 'filters-tab',
+    id: 'filters-tab-label',
+    textContent: 'Filtres'
+  }, document.getElementsByClassName('map-container')[0]);
   const filtersBlock = (0,_utils_createAndAppendElement__WEBPACK_IMPORTED_MODULE_5__.createAndAppendElement)('div', {
     className: 'filters-block'
-  }, document.getElementsByClassName('map-container')[0]);
-  const filtersTab = (0,_utils_createAndAppendElement__WEBPACK_IMPORTED_MODULE_5__.createAndAppendElement)('div', {
-    className: 'filters-tab'
   }, document.getElementsByClassName('map-container')[0]);
 
   // Create and append filter groups
@@ -841,15 +848,6 @@ const addGeoJSONLayers = map => {
     className: 'reset-filters',
     textContent: 'Réinitialiser Filtres'
   }, filtersBlock);
-  const toggleFilterDrawer = () => {
-    const filtersBlock = document.querySelector('.filters-block');
-    if (filtersBlock.classList.contains('open')) {
-      filtersBlock.classList.remove('open');
-    } else {
-      filtersBlock.classList.add('open');
-    }
-  };
-  filtersTab.addEventListener('click', toggleFilterDrawer);
   const adjustFilterBlockHeight = () => {
     const canvasHeight = document.querySelector('.map-container canvas').offsetHeight;
     const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
