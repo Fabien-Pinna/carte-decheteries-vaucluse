@@ -185,7 +185,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const fetchDataAndInitializeMap = async (mapContainer, lat, lng, zoom) => {
   try {
-    const response = await fetch('/wp-admin/admin-ajax.php?action=get_mapbox_access_token');
+    const response = await fetch('/wordpress/wp-admin/admin-ajax.php?action=get_mapbox_access_token');
     if (!response.ok) throw new Error('Failed to fetch Mapbox access token');
     const {
       accessToken
@@ -806,7 +806,7 @@ __webpack_require__.r(__webpack_exports__);
 // Main function to add GeoJSON layers
 const addGeoJSONLayers = map => {
   const geojsonFiles = ['privateLandfill', 'publicLandfill', 'secondhandAssociation'];
-  const wasteTypes = ['Amiante', 'Bois', 'Cartons', 'DEEE', 'Encombrants', 'Gravats', 'Huiles', 'Metaux', 'Pneus', 'Vegetaux', 'Verre'];
+  const wasteTypes = ['Amiante', 'Bois', 'Cartons', 'DEEE', 'Encombrants', 'Gravats', 'Huiles', 'Métaux', 'Pneus', 'Végétaux', 'Verre'];
 
   // Create and append filters block
   const filtersTab = (0,_utils_createAndAppendElement__WEBPACK_IMPORTED_MODULE_5__.createAndAppendElement)('input', {
@@ -831,7 +831,7 @@ const addGeoJSONLayers = map => {
   }, filtersBlock);
   const filterGroupTitle = (0,_utils_createAndAppendElement__WEBPACK_IMPORTED_MODULE_5__.createAndAppendElement)('h5', {
     className: 'filter-group-title',
-    textContent: 'Filtrer par Catégories'
+    textContent: 'Filtrer par Établissements'
   }, filterGroup);
   filterGroup.appendChild(filterGroupTitle);
   const wasteFilterGroup = (0,_utils_createAndAppendElement__WEBPACK_IMPORTED_MODULE_5__.createAndAppendElement)('nav', {
@@ -881,7 +881,7 @@ const addGeoJSONLayers = map => {
 
   // Fetch and process GeoJSON files
   geojsonFiles.forEach(async file => {
-    const dataUrl = `/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`;
+    const dataUrl = `/wordpress/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`;
     const {
       data
     } = await axios__WEBPACK_IMPORTED_MODULE_9__["default"].get(dataUrl);
@@ -975,7 +975,7 @@ const initializeMap = (mapContainer, lat, lng, zoom, accessToken) => {
   (mapbox_gl__WEBPACK_IMPORTED_MODULE_0___default().accessToken) = accessToken;
   const map = new (mapbox_gl__WEBPACK_IMPORTED_MODULE_0___default().Map)({
     container: mapContainer,
-    style: 'mapbox://styles/fabioloco/clnhurl0q03x101qu83e6e9r0',
+    style: 'mapbox://styles/fne-84/clnvktp5w001n01qqd2vdhg17',
     center: [lng, lat],
     zoom
   });
@@ -1058,11 +1058,11 @@ __webpack_require__.r(__webpack_exports__);
 const getLabelForSymbol = symbol => {
   switch (symbol) {
     case 'private-marker':
-      return 'Établissements Privés';
+      return 'Privé';
     case 'public-marker':
-      return 'Déchèteries Publiques';
+      return 'Public';
     case 'association-marker':
-      return 'Ressourceries & Associations';
+      return 'Recyclerie';
     default:
       return symbol;
   }

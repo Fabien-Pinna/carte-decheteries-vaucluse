@@ -3,7 +3,7 @@
 /**
  * Plugin Name:       Carte déchèteries Vaucluse
  * Description:       Une carte interactive des déchèteries du Vaucluse
- * Requires at least: 6.1
+ * Requires at least: 5.8
  * Requires PHP:      7.0
  * Version:           0.1.0
  * Author:            Webinf@b
@@ -36,8 +36,6 @@ function decheteries_map_enqueue_scripts()
         '1.0.0',
         true
     );
-
-    
 }
 add_action('wp_enqueue_scripts', 'decheteries_map_enqueue_scripts');
 
@@ -50,4 +48,3 @@ function get_mapbox_access_token()
 }
 add_action('wp_ajax_get_mapbox_access_token', 'get_mapbox_access_token');
 add_action('wp_ajax_nopriv_get_mapbox_access_token', 'get_mapbox_access_token');
-

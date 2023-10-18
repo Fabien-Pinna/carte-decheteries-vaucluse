@@ -7,6 +7,14 @@
   margin: 0;
 }
 
+.address {
+  line-height: 1;
+  margin-top: 10px;
+}
+.address .icon-marker {
+  margin: 15px 10px 10px;
+}
+
 .box_contact .phone_number {
   color: #ffbc2f !important;
   display: flex;
@@ -35,9 +43,9 @@
 .box_contact .icon_marker,
 .box_contact .icon_phone,
 .box_contact .icon_website {
-  margin: 0.5rem;
-  height: 1.5rem;
-  width: 1.5rem;
+  margin: 5px 10px;
+  height: 2em;
+  width: 25px;
 }
 .box_contact .icon_phone_call,
 .box_contact .icon_new_window {
@@ -58,22 +66,21 @@
 }
 .box_description .icon_card {
   position: absolute;
-  top: 7px;
+  top: 10px;
   right: 5px;
   height: 37px;
   width: 50px;
 }
 .box_description .icon_money {
   position: absolute;
-  top: 10px;
+  top: 12.5px;
   right: 50px;
   height: 20px;
   width: 40px;
 }
 .box_description h3 {
   text-decoration: underline;
-  margin-bottom: 0.5rem;
-  margin-top: 0;
+  margin-top: 1rem !important;
   font-size: 1.5em;
 }
 
@@ -105,6 +112,7 @@
 .hours_informations_box {
   text-align: center;
   margin-top: 0.5rem;
+  font-size: 1em;
 }
 .hours_informations_box p {
   margin: 0;
@@ -125,6 +133,8 @@
   text-align: center;
   border-radius: 5px;
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
+  font-size: 1em;
+  margin: 0;
 }
 .box_schedule table th,
 .box_schedule table td {
@@ -140,18 +150,32 @@
 }
 .box_waste .header_waste {
   display: grid;
-  grid-template-columns: 0.25fr 1fr;
+  grid-template-columns: 0.25fr 0.6fr;
+}
+@media screen and (min-width: 400px) {
+  .box_waste .header_waste {
+    grid-template-columns: 0.25fr 1fr;
+  }
 }
 .box_waste .header_waste h3 {
   font-size: 1.2em;
   margin: 1rem 0.5rem 1rem 0;
   color: white;
   padding: 0;
+  text-align: center;
+}
+@media screen and (min-width: 400px) {
+  .box_waste .header_waste {
+    text-align: initial;
+  }
 }
 .box_waste .header_waste svg {
-  margin: auto 0 auto 1rem;
-  height: 1.2rem;
-  width: 1.2rem;
+  margin: auto 0 auto 0.5rem;
+}
+@media screen and (min-width: 374px) {
+  .box_waste .header_waste svg {
+    margin: auto 0 auto 1rem;
+  }
 }
 @media screen and (min-width: 800px) {
   .box_waste .header_waste svg {
@@ -215,7 +239,7 @@
 @media screen and (min-width: 800px) {
   .mapboxgl-popup {
     width: 60%;
-    max-width: 70% !important;
+    max-width: 450px !important;
     font-size: 14px;
   }
 }
@@ -277,12 +301,13 @@
   padding-bottom: 0;
 }
 .mapboxgl-popup-content .box_content h1 {
-  padding: 1rem;
+  padding: 1.5rem;
   text-align: center;
-  font-size: 2em;
+  font-size: 1.5em;
   margin-bottom: 1rem;
   margin-top: 0;
   color: white;
+  border-top-left-radius: 6px;
 }
 
 #filters-tab {
@@ -290,14 +315,14 @@
   opacity: 0;
 }
 #filters-tab-label {
-  font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 12px;
   font-weight: 600;
   text-align: center;
   top: 0;
-  left: -10px;
-  height: 55px;
-  width: 65px;
-  padding: 0.2rem;
+  left: 0;
+  height: 45px;
+  width: 50px;
+  padding: 3px;
   position: absolute;
   z-index: 200;
   background: #f9f8f8;
@@ -305,19 +330,21 @@
   border-radius: 10px;
   cursor: pointer;
   transition: 0.3s cubic-bezier(0.11, 0.65, 0.96, 0.64);
+  margin-left: 0;
 }
 #filters-tab-label:before {
   content: "";
   position: absolute;
   background: url(images/filtre.3900b231.png) no-repeat center center;
-  width: 50%;
-  height: 50%;
+  width: 16px;
+  height: 16px;
   background-size: cover;
   top: 20px;
+  left: 16px;
 }
 
 #filters-tab:checked ~ #filters-tab-label {
-  left: 240px;
+  left: 170px;
 }
 #filters-tab:checked ~ .filters-block {
   left: 0px;
@@ -328,21 +355,19 @@
   scrollbar-color: #444 #f1f1f1;
   position: absolute;
   top: 0;
-  z-index: 1;
   background-color: #3386c0;
   color: #fff;
   border: none;
   border-radius: 3px;
   cursor: default;
   padding: 10px;
-  font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-weight: 600;
   overflow: auto;
-  left: -250px;
-  width: 100%;
-  max-width: 230px;
+  left: -170px;
+  width: 170px;
   z-index: 250;
   transition: 0.3s cubic-bezier(0.11, 0.65, 0.96, 0.64);
+  text-align: center;
 }
 .filters-block::-webkit-scrollbar {
   width: 12px;
@@ -364,17 +389,19 @@
   position: sticky;
   z-index: 300;
   bottom: 0;
-  left: 0.6rem;
-  width: 90%;
-  height: 3rem;
+  left: 0;
+  width: 95%;
+  height: 40px;
   background-color: #fff;
-  border-radius: 15px;
+  border-radius: 10px;
   border: 3px solid #080849;
   color: #080849;
   cursor: pointer;
-  font-size: 1.2em;
+  font-size: 12px;
   font-weight: 600;
   transition: all 0.2s ease-in-out;
+  padding: 0;
+  text-decoration: none;
 }
 .filters-block #reset-filters:hover {
   background-color: #080849;
@@ -385,10 +412,12 @@
 }
 .filters-block .filter-group h5,
 .filters-block .waste-filter-group h5 {
-  margin: 0.5rem;
-  font-size: 1rem;
+  margin: 0 0 10px 0;
+  font-size: 13px;
   font-weight: 600;
   text-transform: initial;
+  color: #fff;
+  padding: 0;
 }
 .filters-block .filter-group input[type=checkbox],
 .filters-block .waste-filter-group input[type=checkbox] {
@@ -398,35 +427,34 @@
 .filters-block .waste-filter-group input[type=checkbox] + label {
   background-color: #fbfcfd;
   color: #3386c0;
-  display: block;
+  display: flex;
+  justify-content: center;
   cursor: pointer;
-  padding: 10px;
+  padding: 5px;
   border-radius: 33px;
-  text-align: center;
-  margin: 1rem 0;
+  margin: 10px 0;
+  font-size: 13px;
 }
 .filters-block .filter-group input[type=checkbox] + label:hover,
 .filters-block .waste-filter-group input[type=checkbox] + label:hover {
   background-color: #99d2f9;
   color: #a29898;
 }
-.filters-block .waste-filter-group {
-  margin-top: 1rem;
-}
 .filters-block .waste-filter-group input[type=checkbox]:checked + label:before {
   content: "✔";
   color: green;
   position: absolute;
-  left: 50px;
+  left: 25px;
 }
 .filters-block .filter-group .marker-icon {
-  display: inline-block;
+  display: block;
   width: 16px;
   height: 16px;
-  margin-right: 8px;
   background-size: contain !important;
   background: no-repeat center center;
   z-index: 400;
+  position: absolute;
+  left: 25px;
 }
 .filters-block .filter-group .marker-icon.public-marker {
   background-image: url(images/public-marker.38d33bf9.png);
@@ -437,15 +465,13 @@
 .filters-block .filter-group .marker-icon.association-marker {
   background-image: url(images/association-marker.62a8b1b1.png);
 }
-.filters-block .filter-group input[type=checkbox] + label {
-  text-align: left !important;
-}
 .filters-block .filter-group input[type=checkbox] + label:hover, .filters-block .filter-group input[type=checkbox]:not(:checked) + label {
   background-color: #99d2f9;
   color: #a29898;
 }
 .filters-block .filter-group input[type=checkbox]:not(:checked) + label {
-  text-decoration: line-through;
+  -webkit-text-decoration: line-through #2b2a2a;
+          text-decoration: line-through #2b2a2a;
 }
 
 .wp-block-create-block-carte-decheteries-vaucluse {
@@ -453,6 +479,11 @@
   width: 90vw;
   position: relative;
   margin: 2rem auto;
+}
+@media screen and (min-width: 1024px) {
+  .wp-block-create-block-carte-decheteries-vaucluse {
+    width: 80vw;
+  }
 }
 .wp-block-create-block-carte-decheteries-vaucluse .map-container {
   position: absolute;

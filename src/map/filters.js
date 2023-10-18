@@ -8,11 +8,14 @@ export const applyCombinedFilters = (map, geojsonFiles) => {
         .filter((el) => el.checked)
         .map((el) => el.id);
 
+
     geojsonFiles.forEach((file) => {
+
+
         const layerId = `${file}-unclustered-point`;
         const wasteFilterConditions = ['all', ...checkedWastes.map((wasteType) => ['==', wasteType, true])];
         const symbolFilterConditions = ['in', 'icon', ...checkedSymbols];
         const combinedFilterConditions = ['all', wasteFilterConditions, symbolFilterConditions];
-        map.setFilter(layerId, combinedFilterConditions);
+        map.setFilter(layerId, combinedFilterConditions)
     });
 };

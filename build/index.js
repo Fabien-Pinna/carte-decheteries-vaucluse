@@ -224,7 +224,7 @@ __webpack_require__.r(__webpack_exports__);
 // Function to load GeoJSON files and add layers to the map
 const loadGeoJSONFiles = async (map, files) => {
   for (const file of files) {
-    const dataUrl = `/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`;
+    const dataUrl = `/wordpress/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`;
     const {
       data
     } = await axios__WEBPACK_IMPORTED_MODULE_5__["default"].get(dataUrl);
@@ -777,7 +777,7 @@ function Edit(props) {
 
   // Fetch the Mapbox API key
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    fetch('/wp-admin/admin-ajax.php?action=get_mapbox_access_token').then(response => response.json()).then(data => data && data.accessToken && setMapboxAccessToken(data.accessToken)).catch(error => console.error('Error fetching Mapbox API key:', error));
+    fetch('/wordpress/wp-admin/admin-ajax.php?action=get_mapbox_access_token').then(response => response.json()).then(data => data && data.accessToken && setMapboxAccessToken(data.accessToken)).catch(error => console.error('Error fetching Mapbox API key:', error));
   }, []);
 
   // Initialize the Mapbox map
@@ -787,7 +787,7 @@ function Edit(props) {
       if (map.current) return;
       map.current = new (mapbox_gl__WEBPACK_IMPORTED_MODULE_2___default().Map)({
         container: mapContainer.current,
-        style: 'mapbox://styles/fabioloco/clnhurl0q03x101qu83e6e9r0',
+        style: 'mapbox://styles/fne-84/clnvktp5w001n01qqd2vdhg17',
         center: [lng, lat],
         zoom: zoom
       });

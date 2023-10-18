@@ -2,11 +2,11 @@
 export const getLabelForSymbol = (symbol) => {
     switch (symbol) {
         case 'private-marker':
-            return 'Établissements Privés';
+            return 'Privé';
         case 'public-marker':
-            return 'Déchèteries Publiques';
+            return 'Public';
         case 'association-marker':
-            return 'Ressourceries & Associations';
+            return 'Recyclerie';
         default:
             return symbol;
     }

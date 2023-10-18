@@ -6,6 +6,14 @@
   margin: 0;
 }
 
+.address {
+  line-height: 1;
+  margin-top: 10px;
+}
+.address .icon-marker {
+  margin: 15px 10px 10px;
+}
+
 .box_contact .phone_number {
   color: #ffbc2f !important;
   display: flex;
@@ -34,9 +42,9 @@
 .box_contact .icon_marker,
 .box_contact .icon_phone,
 .box_contact .icon_website {
-  margin: 0.5rem;
-  height: 1.5rem;
-  width: 1.5rem;
+  margin: 5px 10px;
+  height: 2em;
+  width: 25px;
 }
 .box_contact .icon_phone_call,
 .box_contact .icon_new_window {
@@ -57,22 +65,21 @@
 }
 .box_description .icon_card {
   position: absolute;
-  top: 7px;
+  top: 10px;
   right: 5px;
   height: 37px;
   width: 50px;
 }
 .box_description .icon_money {
   position: absolute;
-  top: 10px;
+  top: 12.5px;
   right: 50px;
   height: 20px;
   width: 40px;
 }
 .box_description h3 {
   text-decoration: underline;
-  margin-bottom: 0.5rem;
-  margin-top: 0;
+  margin-top: 1rem !important;
   font-size: 1.5em;
 }
 
@@ -104,6 +111,7 @@
 .hours_informations_box {
   text-align: center;
   margin-top: 0.5rem;
+  font-size: 1em;
 }
 .hours_informations_box p {
   margin: 0;
@@ -124,6 +132,8 @@
   text-align: center;
   border-radius: 5px;
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
+  font-size: 1em;
+  margin: 0;
 }
 .box_schedule table th,
 .box_schedule table td {
@@ -139,18 +149,32 @@
 }
 .box_waste .header_waste {
   display: grid;
-  grid-template-columns: 0.25fr 1fr;
+  grid-template-columns: 0.25fr 0.6fr;
+}
+@media screen and (min-width: 400px) {
+  .box_waste .header_waste {
+    grid-template-columns: 0.25fr 1fr;
+  }
 }
 .box_waste .header_waste h3 {
   font-size: 1.2em;
   margin: 1rem 0.5rem 1rem 0;
   color: white;
   padding: 0;
+  text-align: center;
+}
+@media screen and (min-width: 400px) {
+  .box_waste .header_waste {
+    text-align: initial;
+  }
 }
 .box_waste .header_waste svg {
-  margin: auto 0 auto 1rem;
-  height: 1.2rem;
-  width: 1.2rem;
+  margin: auto 0 auto 0.5rem;
+}
+@media screen and (min-width: 374px) {
+  .box_waste .header_waste svg {
+    margin: auto 0 auto 1rem;
+  }
 }
 @media screen and (min-width: 800px) {
   .box_waste .header_waste svg {
@@ -214,7 +238,7 @@
 @media screen and (min-width: 800px) {
   .mapboxgl-popup {
     width: 60%;
-    max-width: 70% !important;
+    max-width: 450px !important;
     font-size: 14px;
   }
 }
@@ -276,12 +300,13 @@
   padding-bottom: 0;
 }
 .mapboxgl-popup-content .box_content h1 {
-  padding: 1rem;
+  padding: 1.5rem;
   text-align: center;
-  font-size: 2em;
+  font-size: 1.5em;
   margin-bottom: 1rem;
   margin-top: 0;
   color: white;
+  border-top-left-radius: 6px;
 }
 
 .wp-block-create-block-carte-decheteries-vaucluse {

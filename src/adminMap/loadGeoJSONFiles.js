@@ -8,7 +8,7 @@ import Popup from '../components/Popup/Popup';
 // Function to load GeoJSON files and add layers to the map
 export const loadGeoJSONFiles = async (map, files) => {
     for (const file of files) {
-        const dataUrl = `/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`;
+        const dataUrl = `/wordpress/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`;
         const { data } = await axios.get(dataUrl);
 
         // Add source and layer to the map

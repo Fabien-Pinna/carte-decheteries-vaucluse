@@ -7,7 +7,7 @@ const initializeMap = (mapContainer, lat, lng, zoom, accessToken) => {
 
     const map = new mapboxgl.Map({
         container: mapContainer,
-        style: 'mapbox://styles/fabioloco/clnhurl0q03x101qu83e6e9r0',
+        style: 'mapbox://styles/fne-84/clnvktp5w001n01qqd2vdhg17',
         center: [lng, lat],
         zoom,
     });

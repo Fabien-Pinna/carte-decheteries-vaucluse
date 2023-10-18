@@ -11,7 +11,7 @@ import Popup from '../components/Popup/Popup';
 // Main function to add GeoJSON layers
 const addGeoJSONLayers = (map) => {
     const geojsonFiles = ['privateLandfill', 'publicLandfill', 'secondhandAssociation'];
-    const wasteTypes = ['Amiante', 'Bois', 'Cartons', 'DEEE', 'Encombrants', 'Gravats', 'Huiles', 'Metaux', 'Pneus', 'Vegetaux', 'Verre'];
+    const wasteTypes = ['Amiante', 'Bois', 'Cartons', 'DEEE', 'Encombrants', 'Gravats', 'Huiles', 'Métaux', 'Pneus', 'Végétaux', 'Verre'];
 
     // Create and append filters block
     const filtersTab = createAndAppendElement(
@@ -57,7 +57,7 @@ const addGeoJSONLayers = (map) => {
         'h5',
         {
             className: 'filter-group-title',
-            textContent: 'Filtrer par Catégories'
+            textContent: 'Filtrer par Établissements'
         },
         filterGroup
     );
@@ -138,7 +138,7 @@ const addGeoJSONLayers = (map) => {
 
     // Fetch and process GeoJSON files
     geojsonFiles.forEach(async (file) => {
-        const dataUrl = `/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`;
+        const dataUrl = `/wordpress/wp-content/plugins/carte-decheteries-vaucluse/src/data/${file}.geojson`;
         const { data } = await axios.get(dataUrl);
 
         // Add source and layer to the map

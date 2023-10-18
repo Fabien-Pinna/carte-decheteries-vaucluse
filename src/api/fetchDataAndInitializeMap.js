@@ -2,7 +2,7 @@ import initializeMap from '../map/initializeMap';
 
 const fetchDataAndInitializeMap = async (mapContainer, lat, lng, zoom) => {
     try {
-        const response = await fetch('/wp-admin/admin-ajax.php?action=get_mapbox_access_token');
+        const response = await fetch('/wordpress/wp-admin/admin-ajax.php?action=get_mapbox_access_token');
         if (!response.ok) throw new Error('Failed to fetch Mapbox access token');
 
         const { accessToken } = await response.json();

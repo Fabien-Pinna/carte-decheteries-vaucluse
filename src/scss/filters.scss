@@ -4,8 +4,7 @@
 $primary-color: #3386c0;
 $secondary-color: #fbfcfd;
 $hover-color: #99d2f9;
-$font-stack: "Helvetica Neue", Arial, Helvetica, sans-serif;
-$font-size: 12px;
+$font-size: 1em;
 $font-weight: 600;
 $border-radius: 33px;
 $transition-time: 0.2s;
@@ -15,14 +14,14 @@ $transition-time: 0.2s;
 	opacity: 0;
 
 	&-label {
-		font: #{$font-size}/ 20px $font-stack;
+		font-size: 12px;
 		font-weight: $font-weight;
 		text-align: center;
 		top: 0;
-		left: -10px;
-		height: 55px;
-		width: 65px;
-		padding: 0.2rem;
+		left: 0;
+		height: 45px;
+		width: 50px;
+		padding: 3px;
 		position: absolute;
 		z-index: 200;
 		background: #f9f8f8;
@@ -30,21 +29,23 @@ $transition-time: 0.2s;
 		border-radius: 10px;
 		cursor: pointer;
 		transition: 0.3s cubic-bezier(0.11, 0.65, 0.96, 0.64);
+		margin-left: 0;
 
 		&:before {
 			content: "";
 			position: absolute;
 			background: url("./Icons/filtre.png") no-repeat center center;
-			width: 50%;
-			height: 50%;
+			width: 16px;
+			height: 16px;
 			background-size: cover;
 			top: 20px;
+			left: 16px;
 		}
 	}
 }
 #filters-tab:checked {
 	& ~ #filters-tab-label {
-		left: 240px;
+		left: 170px;
 	}
 
 	& ~ .filters-block {
@@ -57,37 +58,37 @@ $transition-time: 0.2s;
 
 	position: absolute;
 	top: 0;
-	z-index: 1;
 	background-color: $primary-color;
 	color: #fff;
 	border: none;
 	border-radius: 3px;
 	cursor: default;
 	padding: 10px;
-	font: #{$font-size}/ 20px $font-stack;
 	font-weight: $font-weight;
 	overflow: auto;
-	left: -250px;
-	width: 100%;
-	max-width: 230px;
+	left: -170px;
+	width: 170px;
 	z-index: 250;
 	transition: 0.3s cubic-bezier(0.11, 0.65, 0.96, 0.64);
+	text-align: center;
 
 	#reset-filters {
 		position: sticky;
 		z-index: 300;
 		bottom: 0;
-		left: 0.6rem;
-		width: 90%;
-		height: 3rem;
+		left: 0;
+		width: 95%;
+		height: 40px;
 		background-color: #fff;
-		border-radius: 15px;
+		border-radius: 10px;
 		border: 3px solid #080849;
 		color: #080849;
 		cursor: pointer;
-		font-size: 1.2em;
+		font-size: 12px;
 		font-weight: $font-weight;
 		transition: all $transition-time ease-in-out;
+		padding: 0;
+		text-decoration: none;
 
 		&:hover {
 			background-color: #080849;
@@ -102,10 +103,12 @@ $transition-time: 0.2s;
 	.filter-group,
 	.waste-filter-group {
 		h5 {
-			margin: 0.5rem;
-			font-size: 1rem;
+			margin: 0 0 10px 0;
+			font-size: 13px;
 			font-weight: $font-weight;
 			text-transform: initial;
+			color: #fff;
+			padding: 0;
 		}
 
 		input[type="checkbox"] {
@@ -115,12 +118,13 @@ $transition-time: 0.2s;
 		input[type="checkbox"] + label {
 			background-color: $secondary-color;
 			color: $primary-color;
-			display: block;
+			display: flex;
+			justify-content: center;
 			cursor: pointer;
-			padding: 10px;
+			padding: 5px;
 			border-radius: $border-radius;
-			text-align: center;
-			margin: 1rem 0;
+			margin: 10px 0;
+			font-size: 13px;
 
 			&:hover {
 				background-color: $hover-color;
@@ -130,25 +134,24 @@ $transition-time: 0.2s;
 	}
 
 	.waste-filter-group {
-		margin-top: 1rem;
-
 		input[type="checkbox"]:checked + label:before {
 			content: "✔";
 			color: green;
 			position: absolute;
-			left: 50px;
+			left: 25px;
 		}
 	}
 
 	.filter-group {
 		.marker-icon {
-			display: inline-block;
+			display: block;
 			width: 16px;
 			height: 16px;
-			margin-right: 8px;
 			background-size: contain !important;
 			background: no-repeat center center;
 			z-index: 400;
+			position: absolute;
+			left: 25px;
 
 			&.public-marker {
 				background-image: url("./Icons/public-marker.png");
@@ -164,9 +167,6 @@ $transition-time: 0.2s;
 		}
 
 		& input[type="checkbox"] {
-			& + label {
-				text-align: left !important;
-			}
 			& + label:hover,
 			&:not(:checked) + label {
 				background-color: $hover-color;
@@ -174,71 +174,8 @@ $transition-time: 0.2s;
 			}
 
 			&:not(:checked) + label {
-				text-decoration: line-through;
+				text-decoration: line-through #2b2a2a;
 			}
 		}
 	}
 }
-
-// /* gets the actual input out of the way;
-// we're going to style the label instead */
-
-// #filters-tab {
-// 	position: absolute;
-// 	opacity: 0;
-// }
-
-// #filters-tab-label {
-// 	-webkit-touch-callout: none;
-// 	-webkit-user-select: none;
-// 	-khtml-user-select: none;
-// 	-moz-user-select: none;
-// 	-ms-user-select: none;
-// 	user-select: none;
-// 	left: 0px;
-// 	height: 50px;
-// 	width: 50px;
-// 	display: block;
-// 	position: absolute;
-// 	background: rgba(255, 255, 255, 0);
-// 	z-index: 1;
-// }
-
-// /* adds our "hamburger" menu icon */
-
-// #filters-tab-label:before {
-// 	content: "";
-// 	display: block;
-// 	position: absolute;
-// 	height: 2px;
-// 	width: 24px;
-// 	background: #8d8d8d;
-// 	left: 13px;
-// 	top: 18px;
-// 	box-shadow: 0 6px 0 #8d8d8d, 0 12px 0 #8d8d8d;
-// }
-
-// /* drawer menu pane - note the 0px width */
-
-// .filter-group {
-// 	position: absolute;
-// 	top: 0;
-// 	left: -300px;
-// 	height: 100%;
-// 	width: 300px;
-// 	background: #2f2f2f;
-// 	overflow-x: hidden;
-// 	overflow-y: scroll;
-// 	padding: 20px;
-// 	-webkit-overflow-scrolling: touch;
-// }
-
-// /* checked styles (menu open state) */
-
-// #filters-tab:checked ~ #filters-tab-label {
-// 	left: 300px;
-// }
-
-// #filters-tab:checked ~ #drawer {
-// 	left: 0px;
-// }

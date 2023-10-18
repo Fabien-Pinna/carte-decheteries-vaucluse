@@ -15,7 +15,7 @@ export default function Edit(props) {
 
 	// Fetch the Mapbox API key
 	useEffect(() => {
-		fetch('/wp-admin/admin-ajax.php?action=get_mapbox_access_token')
+		fetch('/wordpress/wp-admin/admin-ajax.php?action=get_mapbox_access_token')
 			.then(response => response.json())
 			.then(data => data && data.accessToken && setMapboxAccessToken(data.accessToken))
 			.catch(error => console.error('Error fetching Mapbox API key:', error));
@@ -30,7 +30,7 @@ export default function Edit(props) {
 
 			map.current = new mapboxgl.Map({
 				container: mapContainer.current,
-				style: 'mapbox://styles/fabioloco/clnhurl0q03x101qu83e6e9r0',
+				style: 'mapbox://styles/fne-84/clnvktp5w001n01qqd2vdhg17',
 				center: [lng, lat],
 				zoom: zoom,
 			});
